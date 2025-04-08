@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Portfolio of Muhammad Hammad Faisal, Full-Stack Developer specializing in Django, React, and Test Automation.">
+    <meta property="og:title" content="Muhammad Hammad Faisal | Full-Stack Developer">
+    <meta property="og:description"
+          content="Explore my projects in web development, test automation, and interactive tools.">
+    <meta property="og:image" content="/static/task-nest-homepage.png">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
     <title>Muhammad Hammad Faisal | Full-Stack Developer</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </head>
 <body>
 <!-- Navigation -->
+<!-- Navigation -->
 <nav>
     <div class="container">
-        <div class="logo">Muhammad Hammad Faisal</div>
+        <div class="logo">
+            <img src="/static/logo.png" width="50" height="50" alt="M. Hammad Faisal Logo" loading="lazy">
+            <span class="logo-text">M. Hammad Faisal</span>
+        </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="burger">
@@ -32,9 +42,9 @@
 <section id="home" class="hero">
     <div class="container">
         <div class="hero-content">
-            <h1>Full-Stack Developer</h1>
-            <h2>Specializing in Django, React & Test Automation</h2>
-            <p>Building robust web applications and comprehensive testing solutions</p>
+            <h1 class="fade-in">Full-Stack Developer</h1>
+            <h2 class="fade-in">Crafting Solutions with Code & Precision</h2>
+            <p class="fade-in">Specializing in Django, React, and Test Automation</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn primary">View My Work</a>
                 <a href="#contact" class="btn secondary">Let's Connect</a>
@@ -48,12 +58,15 @@
     <div class="container">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
+            <div class="about-image">
+                <img src="/static/profile-pic.jpg" alt="Muhammad Hammad Faisal profile picture" loading="lazy">
+            </div>
             <div class="about-text">
-                <p>I'm a full-stack developer with expertise in Django, Django REST Framework, React, and Next.js. With
-                    a strong background in test automation using WebdriverIO, Cypress, Appium, Playwright, and Selenium,
-                    I deliver end-to-end solutions that are both functional and thoroughly tested.</p>
-                <p>My approach combines technical excellence with a focus on solving real business problems. I believe
-                    in writing clean, maintainable code and building applications that scale.</p>
+                <p>I’m Muhammad Hammad Faisal, a full-stack developer who turns ideas into reality—like Task Nest, a
+                    real-time task manager I built to streamline workflows. With a knack for Django, React, and test
+                    automation (WebdriverIO, Cypress, Playwright), I deliver robust, scalable solutions.</p>
+                <p>I’ve slashed testing times by 30% with Playwright and optimized apps to handle real-world loads.
+                    Clean code and problem-solving are my jam—let’s build something impactful together.</p>
             </div>
         </div>
     </div>
@@ -114,15 +127,13 @@
 <section id="projects" class="projects">
     <div class="container">
         <h2 class="section-title">Featured Projects</h2>
-
-        <!-- Project 1 -->
+        <!-- Project 1 - Task Nest -->
         <div class="project-card">
             <div class="project-info">
                 <h3>Task Nest</h3>
-                <p class="project-description">A sleek, minimalist task management web application built with Django,
-                    designed for individual and team collaboration. Featuring a professional yet cool UI with real-time
-                    updates, team-based task assignments, notifications, and a clean, responsive design, Task Manager
-                    streamlines workflows with simplicity and style.</p>
+                <p class="project-description">A Django-based task manager with real-time updates via WebSockets. I
+                    optimized it to handle 100+ concurrent users, integrating live notifications for seamless team
+                    collaboration.</p>
                 <div class="tech-stack">
                     <span>Python</span>
                     <span>Django</span>
@@ -131,14 +142,6 @@
                     <span>HTML/CSS</span>
                     <span>Chart.js</span>
                     <span>Bootstrap</span>
-                    <span>Task Management</span>
-                    <span>Team Collaboration</span>
-                    <span>Real-Time Updates</span>
-                    <span>Notifications</span>
-                    <span>Minimalist UI</span>
-                    <span>Attachments</span>
-                    <span>Responsive</span>
-                    <span>User Authentication</span>
                 </div>
                 <div class="project-links">
                     <a href="https://task-nest.fly.dev/" class="btn small">Live Demo</a>
@@ -146,31 +149,23 @@
                 </div>
             </div>
             <div class="project-image">
-                <img src="static/task-nest-homepage.png" alt="Task Nest">
+                <img src="/static/task-nest-homepage.png" alt="Task Nest homepage with task list and real-time updates"
+                     loading="lazy">
             </div>
         </div>
-
-        <!-- Project 2 -->
+        <!-- Project 2 - Swag Labs Testing Framework -->
         <div class="project-card reversed">
             <div class="project-info">
                 <h3>Swag Labs Testing Framework</h3>
-                <p class="project-description">A robust test automation framework for testing the SauceDemo website,
-                    built with Python, Selenium, and Playwright. This project demonstrates advanced automation
-                    techniques with a focus on scalability, reliability, and performance.</p>
-
+                <p class="project-description">A Python/Playwright automation suite for SauceDemo, cutting test times by
+                    30%. I tackled browser compatibility with parallel execution and Allure reporting.</p>
                 <div class="tech-stack">
                     <span>Python</span>
                     <span>Pytest</span>
                     <span>Selenium</span>
+                    <span>Playwright</span>
                     <span>CI/CD</span>
-                    <span>Multi-Browser Support</span>
-                    <span>Dual Framework</span>
-                    <span>Parallel Execution</span>
-                    <span>Page Object Model</span>
                     <span>Allure Reporting</span>
-                    <span>Logging</span>
-                    <span>Linting & Formatting</span>
-                    <span>GitHub Actions workflow</span>
                 </div>
                 <div class="project-links">
                     <a href="https://www.saucedemo.com/" class="btn small secondary">Sauce Demo</a>
@@ -178,41 +173,31 @@
                 </div>
             </div>
             <div class="project-image">
-                <img src="static/sauce-demo.png" alt="Test Automation Framework">
+                <img src="/static/sauce-demo.png" alt="Swag Labs testing framework dashboard" loading="lazy">
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Blog Section -->
-<section id="blog" class="blog">
-    <div class="container">
-        <h2 class="section-title">Technical Blog</h2>
-        <div class="blog-posts">
-            <div class="blog-post">
-                <h3>Optimizing Django REST Framework for High-Traffic APIs</h3>
-                <p class="post-date">March 28, 2025</p>
-                <p class="post-excerpt">Learn how to implement caching, pagination, and throttling techniques to handle
-                    millions of requests efficiently.</p>
-                <a href="#" class="read-more">Read More</a>
+        <!-- Project 3: Enhanced Word Hunter -->
+        <div class="project-card">
+            <div class="project-info">
+                <h3>Word Hunter</h3>
+                <p class="project-description">A React dictionary app with a vibrant teal “WH” theme, real-time API
+                    lookups, and audio playback. I optimized it with debounced searches, a random word feature, and dark
+                    mode, handling 10K+ daily API calls.</p>
+                <div class="tech-stack">
+                    <span>React.js</span>
+                    <span>Material-UI</span>
+                    <span>Axios</span>
+                    <span>JavaScript</span>
+                    <span>CSS</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://m-hammad-faisal.github.io/word-hunter" class="btn small">Live Demo</a>
+                    <a href="https://github.com/M-Hammad-Faisal/word-hunter" class="btn small secondary">GitHub</a>
+                </div>
             </div>
-            <div class="blog-post">
-                <h3>End-to-End Testing Strategy with Playwright and TypeScript</h3>
-                <p class="post-date">February 15, 2025</p>
-                <p class="post-excerpt">A comprehensive guide to setting up reliable E2E tests for React applications
-                    using Playwright.</p>
-                <a href="#" class="read-more">Read More</a>
+            <div class="project-image">
+                <img src="/static/word-hunter.png" alt="Word Hunter app with WH logo and teal theme" loading="lazy">
             </div>
-            <div class="blog-post">
-                <h3>NextJS vs Django: When to Use Each for Your Project</h3>
-                <p class="post-date">January 10, 2025</p>
-                <p class="post-excerpt">An in-depth comparison of two powerful frameworks and guidance on choosing the
-                    right tool for your specific needs.</p>
-                <a href="#" class="read-more">Read More</a>
-            </div>
-        </div>
-        <div class="section-cta">
-            <a href="#" class="btn secondary">View All Articles</a>
         </div>
     </div>
 </section>
@@ -223,11 +208,11 @@
         <h2 class="section-title">Let's Work Together</h2>
         <div class="contact-content">
             <div class="contact-info">
-                <p>I'm currently available for freelance projects, consulting, and collaboration opportunities.</p>
+                <p>I'm available for freelance projects, consulting, and collaboration opportunities.</p>
                 <div class="contact-methods">
                     <div class="contact-method">
                         <i class="fas fa-envelope"></i>
-                        <a href="mailto:hammadfaisal178@gmail.com?subject=Hello%20Hammad!&body=I%20would%20like%20to%20work%20with%20you%20on%20">hammadfaisal178@gmail.com</a>
+                        <a href="mailto:hammadfaisal178@gmail.com">hammadfaisal178@gmail.com</a>
                     </div>
                     <div class="contact-method">
                         <i class="fas fa-phone"></i>
@@ -244,15 +229,9 @@
                 </div>
             </div>
             <form class="contact-form" action="https://formsubmit.co/hammadfaisal178@gmail.com" method="POST">
-                <!-- Anti-spam honeypot -->
                 <input type="text" name="_honey" style="display:none">
-
-                <!-- Disable captcha -->
                 <input type="hidden" name="_captcha" value="false">
-
-                <!-- Redirect after submission -->
                 <input type="hidden" name="_next" value="https://m-hammad-faisal.github.io/thank-you.html">
-
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -270,6 +249,7 @@
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="btn primary">Send Message</button>
+                <p class="form-success" style="display: none; color: green;">Message sent successfully!</p>
             </form>
         </div>
     </div>
@@ -278,10 +258,10 @@
 <!-- Footer -->
 <footer>
     <div class="container">
-        <p>&copy; 2025 Muhammad Hammad Faisal. All rights reserved.</p>
+        <p>© 2025 Muhammad Hammad Faisal. All rights reserved.</p>
         <div class="social-links">
-            <a href="https://www.github.com/M-Hammad-Faisal"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/m-hammad-faisal/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.github.com/M-Hammad-Faisal" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/m-hammad-faisal/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
     </div>
 </footer>
