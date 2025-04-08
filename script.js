@@ -4,10 +4,7 @@ const nav = document.querySelector('.nav-links');
 const navLinks = document.querySelectorAll('.nav-links li');
 
 burger.addEventListener('click', () => {
-    // Toggle Nav
     nav.classList.toggle('nav-active');
-
-    // Animate Links
     navLinks.forEach((link, index) => {
         if (link.style.animation) {
             link.style.animation = '';
@@ -15,8 +12,6 @@ burger.addEventListener('click', () => {
             link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
         }
     });
-
-    // Burger Animation
     burger.classList.toggle('toggle');
 });
 
@@ -24,24 +19,21 @@ burger.addEventListener('click', () => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
-        // Close mobile menu if open
-        if (nav.classList.contains('nav-active')) {
-            nav.classList.remove('nav-active');
-            burger.classList.remove('toggle');
-            navLinks.forEach(link => {
-                link.style.animation = '';
-            });
-        }
-
+        const navHeight = document.querySelector('nav').offsetHeight;
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
             window.scrollTo({
-                top: targetElement.offsetTop - 80,
+                top: targetElement.offsetTop - navHeight,
                 behavior: 'smooth'
             });
+        }
+
+        if (nav.classList.contains('nav-active')) {
+            nav.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+            navLinks.forEach(link => link.style.animation = '');
         }
     });
 });
@@ -58,28 +50,15 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Form submission
+// Form submission feedback
 const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+const successMessage = document.querySelector('.form-success');
 
-        // Here you would normally send the form data to a server
-        // For GitHub Pages, you can use a service like Formspree
-
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
-
-        console.log('Form submitted:', formData);
-
-        // Reset form
+contactForm.addEventListener('submit', (e) => {
+    // Show feedback before Formsubmit redirect
+    setTimeout(() => {
+        successMessage.style.display = 'block';
         contactForm.reset();
-
-        // Show success message (you can replace this with your own UI)
-        alert('Thanks for your message! I\'ll get back to you soon.');
-    });
-}
+        setTimeout(() => successMessage.style.display = 'none', 3000);
+    }, 500); // Delay to mimic submission
+});
