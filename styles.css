@@ -52,12 +52,12 @@ section {
 
 .section-title:after {
     content: '';
-    display: block;
     width: 80px;
     height: 4px;
     background: var(--primary-color);
     margin: 15px auto 0;
     border-radius: 2px;
+    display: block;
 }
 
 .btn {
@@ -115,23 +115,43 @@ nav .container {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
 }
 
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px; /* Optional: rounded logo */
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color); /* #4a6cf7 from your theme */
+    white-space: nowrap;
+}
+
+/* Existing nav-links and burger styles remain unchanged */
 .nav-links {
     display: flex;
     list-style: none;
 }
 
 .nav-links li {
-    margin-left: 30px;
+    margin-left: 25px;
 }
 
 .nav-links a {
     color: var(--text-color);
     font-weight: 500;
+    font-size: 1rem;
 }
 
 .nav-links a:hover {
@@ -158,22 +178,25 @@ nav .container {
     align-items: center;
     padding-top: 60px;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 10px;
     color: var(--secondary-color);
 }
 
 .hero h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 20px;
     color: var(--primary-color);
 }
@@ -184,10 +207,71 @@ nav .container {
     color: var(--light-text);
 }
 
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-in:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.fade-in:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.fade-in:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
 .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(74, 108, 247, 0.1);
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(42, 56, 85, 0.1);
+    border-radius: 50%;
+    bottom: 15%;
+    right: 15%;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 /* About Section */
@@ -201,9 +285,20 @@ nav .container {
     gap: 50px;
 }
 
+.about-image {
+    flex: 0 0 250px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 .about-text {
+    flex: 1;
     max-width: 800px;
-    margin: 0 auto;
 }
 
 .about-text p {
@@ -314,56 +409,6 @@ nav .container {
     gap: 15px;
 }
 
-/* Blog Section */
-.blog {
-    background-color: var(--light-bg);
-}
-
-.blog-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.blog-post {
-    background: white;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.blog-post:hover {
-    transform: translateY(-5px);
-}
-
-.blog-post h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: var(--secondary-color);
-}
-
-.post-date {
-    font-size: 0.8rem;
-    color: var(--light-text);
-    margin-bottom: 15px;
-}
-
-.post-excerpt {
-    margin-bottom: 20px;
-    color: var(--light-text);
-}
-
-.read-more {
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-.section-cta {
-    text-align: center;
-}
-
 /* Contact Section */
 .contact-content {
     display: grid;
@@ -439,16 +484,23 @@ footer .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+footer p {
+    font-size: 1rem;
 }
 
 .social-links {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    align-items: center;
 }
 
 .social-links a {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
@@ -456,13 +508,21 @@ footer .container {
     color: var(--primary-color);
 }
 
+/* Animations */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 1024px) {
-    .project-card {
-        flex-direction: column;
-    }
-
-    .project-card.reversed {
+    .project-card, .project-card.reversed {
         flex-direction: column;
     }
 
@@ -473,11 +533,19 @@ footer .container {
     .contact-content {
         grid-template-columns: 1fr;
     }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        margin-bottom: 30px;
+    }
 }
 
 @media screen and (max-width: 768px) {
     body {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
 
     section {
@@ -505,6 +573,15 @@ footer .container {
         box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
     }
 
+    .logo-text {
+        font-size: 1.3rem;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
     .nav-links li {
         margin: 0;
     }
@@ -525,16 +602,16 @@ footer .container {
         font-size: 1.5rem;
     }
 
-    .about-content {
-        flex-direction: column;
-    }
-
     .project-info {
         padding: 30px;
     }
 
     .project-info h3 {
         font-size: 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
     }
 }
 
@@ -544,7 +621,7 @@ footer .container {
     }
 
     .hero h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .cta-buttons {
@@ -554,5 +631,23 @@ footer .container {
 
     .section-title {
         font-size: 1.8rem;
+    }
+
+    .logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .about-image {
+        flex: 0 0 200px;
+    }
+
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links {
+        margin-top: 15px;
     }
 }
