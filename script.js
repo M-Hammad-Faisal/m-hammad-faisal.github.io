@@ -62,3 +62,10 @@ contactForm.addEventListener('submit', (e) => {
         setTimeout(() => successMessage.style.display = 'none', 3000);
     }, 500); // Delay to mimic submission
 });
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+    });
+});
