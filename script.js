@@ -85,6 +85,280 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// ===== REVOLUTIONARY UI SYSTEM =====
+
+// Custom Cursor System
+class CustomCursor {
+    constructor() {
+        this.cursor = document.querySelector('.cursor');
+        this.cursorDot = document.querySelector('.cursor-dot');
+        this.cursorRing = document.querySelector('.cursor-ring');
+        this.trail = document.querySelector('.magnetic-trail');
+        this.mouse = { x: 0, y: 0 };
+        this.cursorPos = { x: 0, y: 0 };
+        this.isHovering = false;
+        
+        this.init();
+    }
+    
+    init() {
+        document.addEventListener('mousemove', (e) => this.updatePosition(e));
+        document.addEventListener('mouseenter', () => this.show());
+        document.addEventListener('mouseleave', () => this.hide());
+        
+        // Hover effects for interactive elements
+        const hoverElements = document.querySelectorAll('a, button, .skill-node, .project-card');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => this.setHover(true));
+            el.addEventListener('mouseleave', () => this.setHover(false));
+        });
+        
+        this.animate();
+    }
+    
+    updatePosition(e) {
+        this.mouse.x = e.clientX;
+        this.mouse.y = e.clientY;
+        
+        // Create magnetic trail
+        this.createTrail(e.clientX, e.clientY);
+    }
+    
+    animate() {
+        this.cursorPos.x += (this.mouse.x - this.cursorPos.x) * 0.1;
+        this.cursorPos.y += (this.mouse.y - this.cursorPos.y) * 0.1;
+        
+        this.cursor.style.transform = `translate(${this.cursorPos.x}px, ${this.cursorPos.y}px)`;
+        
+        requestAnimationFrame(() => this.animate());
+    }
+    
+    setHover(hovering) {
+        this.isHovering = hovering;
+        this.cursor.classList.toggle('hover', hovering);
+    }
+    
+    show() {
+        this.cursor.style.opacity = '1';
+    }
+    
+    hide() {
+        this.cursor.style.opacity = '0';
+    }
+    
+    createTrail(x, y) {
+        const trail = document.createElement('div');
+        trail.className = 'magnetic-trail active';
+        trail.style.left = x + 'px';
+        trail.style.top = y + 'px';
+        document.body.appendChild(trail);
+        
+        setTimeout(() => trail.remove(), 500);
+    }
+}
+
+// Neural Network Background
+class NeuralNetwork {
+    constructor() {
+        this.canvas = document.getElementById('neural-canvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.nodes = [];
+        this.connections = [];
+        this.mouse = { x: 0, y: 0 };
+        
+        this.init();
+    }
+    
+    init() {
+        this.resize();
+        this.createNodes();
+        this.createConnections();
+        
+        window.addEventListener('resize', () => this.resize());
+        document.addEventListener('mousemove', (e) => this.updateMouse(e));
+        
+        this.animate();
+    }
+    
+    resize() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
+    
+    createNodes() {
+        this.nodes = [];
+        const nodeCount = Math.min(50, Math.floor(window.innerWidth / 30));
+        
+        for (let i = 0; i < nodeCount; i++) {
+            this.nodes.push({
+                x: Math.random() * this.canvas.width,
+                y: Math.random() * this.canvas.height,
+                vx: (Math.random() - 0.5) * 2,
+                vy: (Math.random() - 0.5) * 2,
+                radius: Math.random() * 3 + 1,
+                color: `hsl(${Math.random() * 60 + 200}, 70%, 60%)`
+            });
+        }
+    }
+    
+    createConnections() {
+        this.connections = [];
+        const maxDistance = 150;
+        
+        for (let i = 0; i < this.nodes.length; i++) {
+            for (let j = i + 1; j < this.nodes.length; j++) {
+                const distance = this.getDistance(this.nodes[i], this.nodes[j]);
+                if (distance < maxDistance) {
+                    this.connections.push({
+                        nodeA: this.nodes[i],
+                        nodeB: this.nodes[j],
+                        opacity: 1 - (distance / maxDistance)
+                    });
+                }
+            }
+        }
+    }
+    
+    updateMouse(e) {
+        this.mouse.x = e.clientX;
+        this.mouse.y = e.clientY;
+    }
+    
+    getDistance(nodeA, nodeB) {
+        return Math.sqrt(
+            Math.pow(nodeA.x - nodeB.x, 2) + Math.pow(nodeA.y - nodeB.y, 2)
+        );
+    }
+    
+    animate() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        // Update nodes
+        this.nodes.forEach(node => {
+            // Mouse interaction
+            const mouseDistance = Math.sqrt(
+                Math.pow(node.x - this.mouse.x, 2) + Math.pow(node.y - this.mouse.y, 2)
+            );
+            
+            if (mouseDistance < 100) {
+                const force = (100 - mouseDistance) / 100;
+                node.vx += (node.x - this.mouse.x) * force * 0.01;
+                node.vy += (node.y - this.mouse.y) * force * 0.01;
+            }
+            
+            node.x += node.vx;
+            node.y += node.vy;
+            
+            // Boundary bounce
+            if (node.x < 0 || node.x > this.canvas.width) node.vx *= -1;
+            if (node.y < 0 || node.y > this.canvas.height) node.vy *= -1;
+            
+            // Keep in bounds
+            node.x = Math.max(0, Math.min(this.canvas.width, node.x));
+            node.y = Math.max(0, Math.min(this.canvas.height, node.y));
+            
+            // Friction
+            node.vx *= 0.99;
+            node.vy *= 0.99;
+        });
+        
+        // Draw connections
+        this.connections.forEach(conn => {
+            const distance = this.getDistance(conn.nodeA, conn.nodeB);
+            if (distance < 150) {
+                this.ctx.beginPath();
+                this.ctx.strokeStyle = `rgba(99, 102, 241, ${conn.opacity * 0.3})`;
+                this.ctx.lineWidth = 1;
+                this.ctx.moveTo(conn.nodeA.x, conn.nodeA.y);
+                this.ctx.lineTo(conn.nodeB.x, conn.nodeB.y);
+                this.ctx.stroke();
+            }
+        });
+        
+        // Draw nodes
+        this.nodes.forEach(node => {
+            this.ctx.beginPath();
+            this.ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+            this.ctx.fillStyle = node.color;
+            this.ctx.shadowBlur = 10;
+            this.ctx.shadowColor = node.color;
+            this.ctx.fill();
+            this.ctx.shadowBlur = 0;
+        });
+        
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+// Typing Animation System
+class TypingAnimation {
+    constructor() {
+        this.element = document.getElementById('typed-text');
+        this.texts = [
+            'Digital Experiences',
+            'Scalable Solutions',
+            'Modern Applications',
+            'Interactive Interfaces',
+            'Innovative Software'
+        ];
+        this.currentIndex = 0;
+        this.currentText = '';
+        this.isDeleting = false;
+        this.typeSpeed = 100;
+        this.deleteSpeed = 50;
+        this.pauseTime = 2000;
+        
+        this.init();
+    }
+    
+    init() {
+        setTimeout(() => this.type(), 1000);
+    }
+    
+    type() {
+        const fullText = this.texts[this.currentIndex];
+        
+        if (!this.isDeleting) {
+            this.currentText = fullText.substring(0, this.currentText.length + 1);
+        } else {
+            this.currentText = fullText.substring(0, this.currentText.length - 1);
+        }
+        
+        this.element.textContent = this.currentText;
+        
+        let speed = this.isDeleting ? this.deleteSpeed : this.typeSpeed;
+        
+        if (!this.isDeleting && this.currentText === fullText) {
+            speed = this.pauseTime;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.currentText === '') {
+            this.isDeleting = false;
+            this.currentIndex = (this.currentIndex + 1) % this.texts.length;
+            speed = 500;
+        }
+        
+        setTimeout(() => this.type(), speed);
+    }
+}
+
+// Initialize Revolutionary Systems
+if (typeof window !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', () => {
+        new CustomCursor();
+        new NeuralNetwork();
+        new TypingAnimation();
+        
+        // Add entrance animations
+        gsap.from('.hero-content', {
+            duration: 1.5,
+            y: 50,
+            opacity: 0,
+            ease: 'power4.out',
+            delay: 0.5
+        });
+    });
+}
+
 burger.addEventListener('click', () => {
     nav.classList.toggle('nav-active');
     navLinks.forEach((link, index) => {

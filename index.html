@@ -14,8 +14,20 @@
     <title>Muhammad Hammad Faisal | Full-Stack Developer</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
+<!-- Custom Cursor -->
+<div class="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+</div>
+
+<!-- Magnetic Trail -->
+<div class="magnetic-trail"></div>
+
 <!-- Navigation -->
 <nav aria-label="Main navigation">
     <div class="container">
@@ -45,17 +57,71 @@
 
 <!-- Hero Section -->
 <section id="home" class="hero">
+    <!-- Neural Network Background -->
+    <canvas id="neural-canvas" class="neural-background"></canvas>
+    
+    <!-- Particle System -->
+    <div id="particles-container" class="particles-container"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-code">&lt;code&gt;</div>
+        <div class="floating-code">{ }</div>
+        <div class="floating-code">&lt;/&gt;</div>
+        <div class="floating-code">( )</div>
+    </div>
+    
     <div class="container">
         <div class="hero-content">
-            <h1 class="fade-in">Full-Stack Developer</h1>
-            <h2 class="fade-in">Crafting Solutions with Code & Precision</h2>
-            <p class="fade-in">Specializing in Django, React, and Test Automation</p>
+            <!-- Glitch Effect Title -->
+            <div class="glitch-wrapper">
+                <h1 class="hero-title glitch" data-text="Full-Stack Developer">Full-Stack Developer</h1>
+            </div>
+            
+            <!-- Animated Typing Subtitle -->
+            <div class="typing-container">
+                <h2 class="typing-text">Crafting <span class="highlight" id="typed-text"></span></h2>
+                <span class="cursor">|</span>
+            </div>
+            
+            <!-- Interactive Skills Preview -->
+            <div class="skill-orbits">
+                <div class="orbit orbit-1">
+                    <div class="skill-node" data-skill="React">R</div>
+                </div>
+                <div class="orbit orbit-2">
+                    <div class="skill-node" data-skill="Django">D</div>
+                </div>
+                <div class="orbit orbit-3">
+                    <div class="skill-node" data-skill="JavaScript">JS</div>
+                </div>
+                <div class="orbit orbit-4">
+                    <div class="skill-node" data-skill="Python">Py</div>
+                </div>
+            </div>
+            
+            <!-- Holographic Buttons -->
             <div class="cta-buttons">
-                <a href="#projects" class="btn primary">View My Work</a>
-                <a href="#contact" class="btn secondary">Let's Connect</a>
+                <a href="#projects" class="btn holographic primary" data-text="Explore Projects">
+                    <span class="btn-content">Explore Projects</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="#contact" class="btn holographic secondary" data-text="Connect">
+                    <span class="btn-content">Connect</span>
+                    <div class="btn-glow"></div>
+                </a>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <div class="scroll-text">Scroll to Explore</div>
             </div>
         </div>
     </div>
+    
+    <!-- 3D Scene Container -->
+    <div id="three-container" class="three-scene"></div>
 </section>
 
 <!-- About Section -->
@@ -205,7 +271,7 @@
             </div>
         </div>
         <!-- Project 4: JSON Compare -->
-        <div class="project-card">
+        <div class="project-card reversed">
             <div class="project-info">
                 <h3>JSON Compare</h3>
                 <p class="project-description">A professional JSON comparison tool with GitHub-style diff visualization.
