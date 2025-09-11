@@ -432,24 +432,24 @@ function initLiquidEffects() {
 
 function createLiquidTrail(x, y) {
     const trail = document.createElement('div');
-    trail.className = 'liquid-trail';
+    trail.className = 'ethereal-trail';
     trail.style.cssText = `
         position: fixed;
         left: ${x}px;
         top: ${y}px;
-        width: 4px;
-        height: 4px;
+        width: 3px;
+        height: 3px;
         border-radius: 50%;
-        background: var(--prism-fire);
-        background-size: 200% 200%;
+        background: var(--mist-light);
+        box-shadow: 0 0 12px rgba(224, 225, 221, 0.6);
         pointer-events: none;
         z-index: 9999;
-        animation: liquidTrailFade 0.8s ease-out forwards;
+        animation: etherealTrailFade 1s ease-out forwards;
     `;
     
     document.body.appendChild(trail);
     
-    setTimeout(() => trail.remove(), 800);
+    setTimeout(() => trail.remove(), 1000);
 }
 
 function createEtherealParticles() {
@@ -461,16 +461,16 @@ function createEtherealParticles() {
         particle.className = 'ethereal-particle';
         particle.style.cssText = `
             position: absolute;
-            width: ${Math.random() * 6 + 2}px;
-            height: ${Math.random() * 6 + 2}px;
-            background: var(--prism-fire);
-            background-size: 200% 200%;
+            width: ${Math.random() * 4 + 1}px;
+            height: ${Math.random() * 4 + 1}px;
+            background: var(--steel-light);
             border-radius: 50%;
             left: ${Math.random() * 100}%;
             top: ${Math.random() * 100}%;
-            animation: etherealFloat ${Math.random() * 10 + 15}s linear infinite;
-            opacity: ${Math.random() * 0.6 + 0.2};
-            filter: blur(1px);
+            animation: etherealFloat ${Math.random() * 15 + 20}s linear infinite;
+            opacity: ${Math.random() * 0.4 + 0.1};
+            box-shadow: 0 0 8px rgba(119, 141, 169, 0.4);
+            filter: blur(0.5px);
         `;
         
         particleContainer.appendChild(particle);
@@ -480,27 +480,30 @@ function createEtherealParticles() {
 // Add liquid trail CSS animation
 const liquidTrailStyle = document.createElement('style');
 liquidTrailStyle.textContent = `
-    @keyframes liquidTrailFade {
+    @keyframes etherealTrailFade {
         0% {
-            transform: scale(1) rotate(0deg);
+            transform: scale(1);
             opacity: 1;
-            background-position: 0% 50%;
+            box-shadow: 0 0 12px rgba(224, 225, 221, 0.6);
         }
         100% {
-            transform: scale(3) rotate(180deg);
+            transform: scale(4);
             opacity: 0;
-            background-position: 100% 50%;
+            box-shadow: 0 0 24px rgba(224, 225, 221, 0.2);
         }
     }
     
     @keyframes etherealFloat {
         0% {
             transform: translateY(0) rotate(0deg);
-            background-position: 0% 50%;
+            opacity: 0.1;
+        }
+        50% {
+            opacity: 0.4;
         }
         100% {
-            transform: translateY(-100vh) rotate(360deg);
-            background-position: 100% 50%;
+            transform: translateY(-100vh) rotate(180deg);
+            opacity: 0;
         }
     }
 `;
