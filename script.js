@@ -348,16 +348,163 @@ if (typeof window !== 'undefined') {
         new NeuralNetwork();
         new TypingAnimation();
         
-        // Add entrance animations
-        gsap.from('.hero-content', {
-            duration: 1.5,
-            y: 50,
-            opacity: 0,
-            ease: 'power4.out',
-            delay: 0.5
-        });
+        // Revolutionary Liquid Animations
+        initLiquidEffects();
+        
+        // GSAP Master Timeline
+        const masterTimeline = gsap.timeline();
+        
+        masterTimeline
+            .from('.hero-content', {
+                duration: 2,
+                y: 100,
+                opacity: 0,
+                ease: 'elastic.out(1, 0.5)',
+                delay: 0.5
+            })
+            .from('.project-card', {
+                duration: 1.5,
+                y: 80,
+                opacity: 0,
+                rotationX: 25,
+                stagger: 0.3,
+                ease: 'back.out(1.7)',
+                scrollTrigger: {
+                    trigger: '.projects',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: 1
+                }
+            });
     });
 }
+
+// Liquid Morphing Effects System
+function initLiquidEffects() {
+    // Liquid cursor trail
+    document.addEventListener('mousemove', (e) => {
+        createLiquidTrail(e.clientX, e.clientY);
+    });
+    
+    // Project card magnetic effect
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const deltaX = (x - centerX) / centerX;
+            const deltaY = (y - centerY) / centerY;
+            
+            gsap.to(card, {
+                duration: 0.5,
+                rotationY: deltaX * 10,
+                rotationX: deltaY * -10,
+                transformPerspective: 1000,
+                ease: 'power2.out'
+            });
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                duration: 0.8,
+                rotationY: 0,
+                rotationX: 0,
+                ease: 'elastic.out(1, 0.5)'
+            });
+        });
+    });
+    
+    // Liquid background morph
+    gsap.to('.hero::before', {
+        duration: 20,
+        backgroundPosition: '100% 100%',
+        ease: 'none',
+        repeat: -1,
+        yoyo: true
+    });
+    
+    // Ethereal particle system
+    createEtherealParticles();
+}
+
+function createLiquidTrail(x, y) {
+    const trail = document.createElement('div');
+    trail.className = 'liquid-trail';
+    trail.style.cssText = `
+        position: fixed;
+        left: ${x}px;
+        top: ${y}px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--prism-fire);
+        background-size: 200% 200%;
+        pointer-events: none;
+        z-index: 9999;
+        animation: liquidTrailFade 0.8s ease-out forwards;
+    `;
+    
+    document.body.appendChild(trail);
+    
+    setTimeout(() => trail.remove(), 800);
+}
+
+function createEtherealParticles() {
+    const particleContainer = document.querySelector('.particles-container');
+    if (!particleContainer) return;
+    
+    for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'ethereal-particle';
+        particle.style.cssText = `
+            position: absolute;
+            width: ${Math.random() * 6 + 2}px;
+            height: ${Math.random() * 6 + 2}px;
+            background: var(--prism-fire);
+            background-size: 200% 200%;
+            border-radius: 50%;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            animation: etherealFloat ${Math.random() * 10 + 15}s linear infinite;
+            opacity: ${Math.random() * 0.6 + 0.2};
+            filter: blur(1px);
+        `;
+        
+        particleContainer.appendChild(particle);
+    }
+}
+
+// Add liquid trail CSS animation
+const liquidTrailStyle = document.createElement('style');
+liquidTrailStyle.textContent = `
+    @keyframes liquidTrailFade {
+        0% {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+            background-position: 0% 50%;
+        }
+        100% {
+            transform: scale(3) rotate(180deg);
+            opacity: 0;
+            background-position: 100% 50%;
+        }
+    }
+    
+    @keyframes etherealFloat {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            background-position: 0% 50%;
+        }
+        100% {
+            transform: translateY(-100vh) rotate(360deg);
+            background-position: 100% 50%;
+        }
+    }
+`;
+document.head.appendChild(liquidTrailStyle);
 
 burger.addEventListener('click', () => {
     nav.classList.toggle('nav-active');
