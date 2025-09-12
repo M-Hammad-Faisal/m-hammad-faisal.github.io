@@ -8,7 +8,7 @@
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blue?logo=github&style=for-the-badge)](https://m-hammad-faisal.github.io/)
 [![Responsive Design](https://img.shields.io/badge/📱_Responsive-Mobile_First-orange?style=for-the-badge)](https://m-hammad-faisal.github.io/)
 
-![Portfolio Preview](https://via.placeholder.com/800x400/6366f1/ffffff?text=Portfolio+Preview)
+![Portfolio Preview](./assets/portfolio-preview.png)
 
 *Professional portfolio with dark mode, smooth animations, and modern design*
 
@@ -43,7 +43,6 @@ Welcome to my personal portfolio website! This modern, responsive site showcases
 - **Smooth Animations** - Scroll-triggered animations and hover effects
 - **Profile Integration** - Professional headshot in hero section
 - **Resume System** - HTML and TXT download options
-- **Video Showcase** - Portfolio demonstration video
 - **Contact Form** - Functional form with validation
 
 ### Deployment
@@ -149,7 +148,7 @@ portfolio/
 ├── js/
 │   └── script.js       # Interactive functionality
 ├── assets/             # All media files
-│   ├── video.mov       # Portfolio demo video
+│   ├── portfolio-preview.png # Portfolio preview image
 │   ├── profile-pic.jpg # Professional headshot
 │   ├── favicon.ico     # Site icon
 │   ├── logo.png        # Brand logo
@@ -192,12 +191,6 @@ React-based dictionary application with real-time API integration and dark mode 
 
 ### [Ollama Chat](https://github.com/M-Hammad-Faisal/ollama-chat)
 Privacy-focused AI chat interface powered by local Ollama models with modern Material-UI design.
-
-## 🎥 Video Showcase
-
-**Portfolio Demo Video**: [Watch the complete portfolio walkthrough](./assets/video.mov)
-
-*Experience the modern Navy+Teal design with seamless user interactions*
 
 ## 🤝 Contributing
 
