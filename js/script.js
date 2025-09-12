@@ -170,46 +170,59 @@ function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const submitBtn = contactForm.querySelector('.btn-primary');
-            const originalText = submitBtn.innerHTML;
-            
-            // Update button state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            try {
-                // Simulate form submission (replace with your actual endpoint)
-                await simulateFormSubmission(formData);
+        // Check if form has FormSubmit action (real submission)
+        const hasRealAction = contactForm.action && contactForm.action.includes('formsubmit.co');
+        
+        if (hasRealAction) {
+            // Real form submission - let the form submit naturally
+            contactForm.addEventListener('submit', (e) => {
+                const submitBtn = contactForm.querySelector('.btn-primary');
+                const originalText = submitBtn.innerHTML;
                 
-                // Success state
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                submitBtn.style.background = 'var(--accent-green)';
+                // Update button state
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
                 
-                // Reset form
-                contactForm.reset();
+                // Form will submit naturally and redirect to thank-you page
+            });
+        } else {
+            // Fallback: simulate submission for demo purposes
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
                 
-                // Show success message
-                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+                const formData = new FormData(contactForm);
+                const submitBtn = contactForm.querySelector('.btn-primary');
+                const originalText = submitBtn.innerHTML;
                 
-            } catch (error) {
-                // Error state
-                submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
-                submitBtn.style.background = 'var(--accent-orange)';
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
                 
-                showNotification('Failed to send message. Please try again.', 'error');
-            }
-            
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.background = '';
-            }, 3000);
-        });
+                try {
+                    await simulateFormSubmission(formData);
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                    submitBtn.style.background = 'var(--accent-green)';
+                    
+                    contactForm.reset();
+                    
+                    setTimeout(() => {
+                        window.location.href = './thank-you.html';
+                    }, 1500);
+                    
+                } catch (error) {
+                    submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
+                    submitBtn.style.background = 'var(--accent-orange)';
+                    
+                    showNotification('Failed to send message. Please try again.', 'error');
+                }
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                }, 3000);
+            });
+        }
         
         // Form validation
         const inputs = contactForm.querySelectorAll('input, textarea');

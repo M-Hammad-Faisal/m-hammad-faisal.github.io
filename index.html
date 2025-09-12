@@ -583,7 +583,7 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/2b7bd798be49a96557fe50e042aad61a" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -600,6 +600,11 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_next" value="https://m-hammad-faisal.github.io/thank-you.html">
+                        <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i>
                             Send Message

@@ -4,20 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You | Muhammad Hammad Faisal</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/free.min.css" integrity="sha512-V8HcT6+9dXg6FQSQPb8rncAq5T+dmY5Kx3+1Vf6ar3OtXa45OYrDcIPnC50YSR/jUcMnDqvc+vdDH1hnMrnBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <meta name="description" content="Thank you for contacting Muhammad Hammad Faisal. Your message has been received.">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-<section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h1 class="fade-in">Thank You!</h1>
-            <p class="fade-in">Your message has been sent successfully. I'll get back to you as soon as possible.</p>
-            <div class="cta-buttons">
-                <a href="index.html" class="btn primary">Back to Portfolio</a>
+    <section class="hero" style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <div style="font-size: 4rem; color: var(--primary-teal); margin-bottom: 2rem;">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1.5rem;">Thank You!</h1>
+                <p class="hero-description" style="font-size: 1.25rem; margin-bottom: 3rem; color: var(--text-secondary);">
+                    Your message has been sent successfully. I'll get back to you as soon as possible.
+                </p>
+                <div class="hero-buttons">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Portfolio
+                    </a>
+                    <a href="resume.html" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-file-alt"></i>
+                        View Resume
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    
+    <script>
+        // Auto redirect after 10 seconds
+        setTimeout(() => {
+            window.location.href = './index.html';
+        }, 10000);
+        
+        // Initialize theme from localStorage
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.body.setAttribute('data-theme', savedTheme);
+    </script>
 </body>
 </html>
