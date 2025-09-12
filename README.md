@@ -30,21 +30,24 @@ Welcome to my personal portfolio website! This modern, responsive site showcases
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **HTML5** - Semantic markup and modern standards
-- **CSS3** - Custom properties, CSS Grid, Flexbox, animations
-- **Vanilla JavaScript** - ES6+, Intersection Observer, LocalStorage API
+- **HTML5** - Semantic markup with SEO optimization
+- **CSS3** - Modern Navy + Teal design system with CSS custom properties
+- **Vanilla JavaScript** - ES6+, Intersection Observer, smooth animations
 - **Font Awesome** - Professional iconography
+- **Google Fonts** - Inter typography for modern look
 
-### Design & UX
-- **Mobile-First Design** - Responsive across all screen sizes
-- **CSS Custom Properties** - Maintainable design system
-- **Smooth Animations** - CSS transitions and keyframe animations
-- **Dark Mode** - System preference detection with manual override
+### Design & Features
+- **Navy + Teal Color Scheme** - Professional and modern palette
+- **Dark/Light Mode Toggle** - Persistent theme switching
+- **Responsive Design** - Mobile-first approach
+- **Smooth Animations** - Scroll-triggered animations and hover effects
+- **Contact Form** - Functional form with validation
+- **Typing Animation** - Dynamic hero section
 
 ### Deployment
 - **GitHub Pages** - Automated deployment from main branch
-- **Custom Domain** - Professional web presence
-- **SSL Certificate** - Secure HTTPS connection
+- **Optimized Performance** - Lazy loading and debounced handlers
+- **SEO Ready** - Meta tags and Open Graph support
 
 ## 🎨 Features
 

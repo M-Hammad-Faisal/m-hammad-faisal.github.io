@@ -3,390 +3,636 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="M. Hammad Faisal, portfolio, React, Python, Django, AI">
-    <meta property="og:title" content="Muhammad Hammad Faisal | Full-Stack Developer">
-    <meta property="og:description"
-          content="Full-stack developer with expertise in React, Python, and AI. Explore my projects!">
-    <meta name="description"
-          content="Portfolio of Muhammad Hammad Faisal, Full-Stack Developer specializing in Django, React, and Test Automation.">
-    <meta property="og:image" content="/static/logo.png">
-    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
-    <title>Muhammad Hammad Faisal | Full-Stack Developer</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <title>Muhammad Hammad Faisal | Test Automation Engineer & Full Stack Developer</title>
+    
+    <meta name="description" content="Professional Test Automation Engineer and Full Stack Developer specializing in WebDriverIO, Playwright, Django, React. Available for remote opportunities.">
+    <meta name="keywords" content="Test Automation Engineer, Full Stack Developer, WebDriverIO, Playwright, Selenium, Django, React, Python, TypeScript, Remote Developer">
+    <meta name="author" content="Muhammad Hammad Faisal">
+    
+    <meta property="og:title" content="Muhammad Hammad Faisal | Test Automation Engineer & Full Stack Developer">
+    <meta property="og:description" content="Professional Test Automation Engineer and Full Stack Developer available for remote opportunities">
+    <meta property="og:image" content="https://m-hammad-faisal.github.io/assets/profile.jpg">
+    <meta property="og:url" content="https://m-hammad-faisal.github.io">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Muhammad Hammad Faisal | Test Automation Engineer & Full Stack Developer">
+    <meta name="twitter:description" content="Professional Test Automation Engineer and Full Stack Developer available for remote opportunities">
+    <meta name="twitter:image" content="https://m-hammad-faisal.github.io/assets/profile.jpg">
+    
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-<!-- Custom Cursor -->
-<div class="cursor">
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-</div>
-
-<!-- Magnetic Trail -->
-<div class="magnetic-trail"></div>
-
-<!-- Navigation -->
-<nav aria-label="Main navigation">
-    <div class="container">
-        <div class="logo">
-            <img src="/static/logo.png" width="50" height="50" alt="M. Hammad Faisal Logo" loading="lazy">
-            <span class="logo-text">M. Hammad Faisal</span>
-        </div>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>M. Hammad Faisal</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
             </ul>
-            <button class="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon" id="theme-icon"></i>
-            </button>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
-    <!-- Neural Network Background -->
-    <canvas id="neural-canvas" class="neural-background"></canvas>
-    
-    <!-- Particle System -->
-    <div id="particles-container" class="particles-container"></div>
-    
-    <!-- Floating Elements -->
-    <div class="floating-elements">
-        <div class="floating-code">&lt;code&gt;</div>
-        <div class="floating-code">{ }</div>
-        <div class="floating-code">&lt;/&gt;</div>
-        <div class="floating-code">( )</div>
-    </div>
-    
-    <div class="container">
-        <div class="hero-content">
-            <!-- Glitch Effect Title -->
-            <div class="glitch-wrapper">
-                <h1 class="hero-title glitch" data-text="Full-Stack Developer">Full-Stack Developer</h1>
-            </div>
-            
-            <!-- Animated Typing Subtitle -->
-            <div class="typing-container">
-                <h2 class="typing-text">Crafting <span class="highlight" id="typed-text"></span></h2>
-                <span class="cursor">|</span>
-            </div>
-            
-            <!-- Interactive Skills Preview -->
-            <div class="skill-orbits">
-                <div class="orbit orbit-1">
-                    <div class="skill-node" data-skill="React">R</div>
-                </div>
-                <div class="orbit orbit-2">
-                    <div class="skill-node" data-skill="Django">D</div>
-                </div>
-                <div class="orbit orbit-3">
-                    <div class="skill-node" data-skill="JavaScript">JS</div>
-                </div>
-                <div class="orbit orbit-4">
-                    <div class="skill-node" data-skill="Python">Py</div>
-                </div>
-            </div>
-            
-            <!-- Holographic Buttons -->
-            <div class="cta-buttons">
-                <a href="#projects" class="btn holographic primary" data-text="Explore Projects">
-                    <span class="btn-content">Explore Projects</span>
-                    <div class="btn-glow"></div>
-                </a>
-                <a href="#contact" class="btn holographic secondary" data-text="Connect">
-                    <span class="btn-content">Connect</span>
-                    <div class="btn-glow"></div>
-                </a>
-            </div>
-            
-            <!-- Scroll Indicator -->
-            <div class="scroll-indicator">
-                <div class="scroll-line"></div>
-                <div class="scroll-text">Scroll to Explore</div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 3D Scene Container -->
-    <div id="three-container" class="three-scene"></div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="about">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="/static/profile-pic.jpg" alt="Muhammad Hammad Faisal profile picture" loading="lazy">
-            </div>
-            <div class="about-text">
-                <p>I’m Muhammad Hammad Faisal, a full-stack developer who turns ideas into reality—like Task Nest, a
-                    real-time task manager I built to streamline workflows. With a knack for Django, React, and test
-                    automation (WebdriverIO, Cypress, Playwright), I deliver robust, scalable solutions.</p>
-                <p>I’ve slashed testing times by 30% with Playwright and optimized apps to handle real-world loads.
-                    Clean code and problem-solving are my jam—let’s build something impactful together.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="skills">
-    <div class="container">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>Backend Development</h3>
-                <div class="skill-tags">
-                    <span>Django</span>
-                    <span>Django REST Framework</span>
-                    <span>Django Channels</span>
-                    <span>Python</span>
-                    <span>PyQt5</span>
-                    <span>Tkinter</span>
-                    <span>API Design</span>
-                    <span>API Development</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Frontend Development</h3>
-                <div class="skill-tags">
-                    <span>React.js</span>
-                    <span>Next.js</span>
-                    <span>JavaScript</span>
-                    <span>TypeScript</span>
-                    <span>HTML/CSS</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Testing & Automation</h3>
-                <div class="skill-tags">
-                    <span>WebdriverIO</span>
-                    <span>Playwright</span>
-                    <span>Cypress</span>
-                    <span>Selenium</span>
-                    <span>Appium</span>
-                    <span>PyTest</span>
-                    <span>Jest</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>DevOps & Tools</h3>
-                <div class="skill-tags">
-                    <span>Github Actions</span>
-                    <span>CI/CD</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Projects Section -->
-<section id="projects" class="projects">
-    <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <!-- Project 1: Task Nest -->
-        <div class="project-card">
-            <div class="project-info">
-                <h3>Task Nest</h3>
-                <p class="project-description">A Django-based task manager with real-time updates via WebSockets. I
-                    optimized it to handle 100+ concurrent users, integrating live notifications for seamless team
-                    collaboration.</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>Django</span>
-                    <span>Django Channels</span>
-                    <span>Websockets</span>
-                    <span>HTML/CSS</span>
-                    <span>Chart.js</span>
-                    <span>Bootstrap</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://task-nest.fly.dev/" class="btn small">Live Demo</a>
-                    <a href="https://github.com/M-Hammad-Faisal/Task-Nest" class="btn small secondary">GitHub</a>
-                </div>
-            </div>
-            <div class="project-image">
-                <img src="/static/task-nest-homepage.png" alt="Task Nest homepage with task list and real-time updates"
-                     loading="lazy">
-            </div>
-        </div>
-        <!-- Project 2: Swag Labs Testing Framework -->
-        <div class="project-card reversed">
-            <div class="project-info">
-                <h3>Swag Labs Testing Framework</h3>
-                <p class="project-description">A Python/Playwright automation suite for SauceDemo, cutting test times by
-                    30%. I tackled browser compatibility with parallel execution and Allure reporting.</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>Pytest</span>
-                    <span>Selenium</span>
-                    <span>Playwright</span>
-                    <span>CI/CD</span>
-                    <span>Allure Reporting</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://www.saucedemo.com/" class="btn small secondary">Sauce Demo</a>
-                    <a href="https://github.com/M-Hammad-Faisal/Website-Tester" class="btn small secondary">GitHub</a>
-                </div>
-            </div>
-            <div class="project-image">
-                <img src="/static/sauce-demo.png" alt="Swag Labs testing framework dashboard" loading="lazy">
-            </div>
-        </div>
-        <!-- Project 3: Word Hunter -->
-        <div class="project-card">
-            <div class="project-info">
-                <h3>Word Hunter</h3>
-                <p class="project-description">A React dictionary app with a vibrant teal “WH” theme, real-time API
-                    lookups, and audio playback. I optimized it with debounced searches, a random word feature, and dark
-                    mode, handling 10K+ daily API calls.</p>
-                <div class="tech-stack">
-                    <span>React.js</span>
-                    <span>Material-UI</span>
-                    <span>Axios</span>
-                    <span>JavaScript</span>
-                    <span>CSS</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://m-hammad-faisal.github.io/word-hunter" class="btn small">Live Demo</a>
-                    <a href="https://github.com/M-Hammad-Faisal/word-hunter" class="btn small secondary">GitHub</a>
-                </div>
-            </div>
-            <div class="project-image">
-                <img src="/static/word-hunter.png" alt="Word Hunter app with WH logo and teal theme" loading="lazy">
-            </div>
-        </div>
-        <!-- Project 4: JSON Compare -->
-        <div class="project-card reversed">
-            <div class="project-info">
-                <h3>JSON Compare</h3>
-                <p class="project-description">A professional JSON comparison tool with GitHub-style diff visualization.
-                    Features both a browser-based interface and CLI tool, supporting drag & drop, type change detection,
-                    and responsive dark/light themes. Built with vanilla JavaScript for maximum performance and zero dependencies.
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm Muhammad Hammad Faisal <span class="wave">👋</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    Software Engineer • Automation Expert • Builder of Digital Solutions
+                </h2>
+                <p class="hero-description">
+                    I specialize in automation, web development, and crafting intuitive user experiences. Currently at Arbisoft, I excel in WebdriverIO automation and contribute to open-source projects.
                 </p>
-                <div class="tech-stack">
-                    <span>JavaScript ES6+</span>
-                    <span>Node.js</span>
-                    <span>HTML/CSS</span>
-                    <span>CLI</span>
-                    <span>GitHub Pages</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://m-hammad-faisal.github.io/json-compare/" class="btn small">Live Demo</a>
-                    <a href="https://github.com/M-Hammad-Faisal/json-compare" class="btn small secondary">GitHub</a>
-                </div>
-            </div>
-            <div class="project-image">
-                <img src="/static/json-compare.png" alt="JSON Compare tool with GitHub-style diff visualization" loading="lazy">
-            </div>
-        </div>
-        <!-- Project 5: Ollama Chat -->
-        <div class="project-card reversed">
-            <div class="project-info">
-                <h3>Ollama Chat</h3>
-                <p class="project-description">A real-time chat app powered by Ollama, running local AI models for
-                    privacy-focused conversations. It features a clean Material-UI interface, chat history management,
-                    dark/light mode theming, and advanced chat functionalities like message editing, regeneration, and
-                    version navigation.
-                </p>
-                <div class="tech-stack">
-                    <span>Ollama</span>
-                    <span>React.js</span>
-                    <span>Material UI</span>
-                    <span>Css</span>
-                    <span>Axios</span>
-                    <span>JavaScript</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://ollama.com/" class="btn small secondary">Ollama</a>
-                    <a href="https://github.com/M-Hammad-Faisal/ollama-chat" class="btn small secondary">GitHub</a>
-                </div>
-            </div>
-            <div class="project-image">
-                <img src="/static/ollama-chat.png" alt="Ollama Chat app with AI-powered messaging" loading="lazy">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title">Let's Work Together</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <p>I'm available for freelance projects, consulting, and collaboration opportunities.</p>
-                <div class="contact-methods">
-                    <div class="contact-method">
+                <div class="hero-buttons">
+                    <a href="./resume.html" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-file-alt"></i>
+                        View Resume
+                    </a>
+                    <a href="./resume.txt" class="btn btn-secondary" download>
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
                         <i class="fas fa-envelope"></i>
-                        <a href="mailto:hammadfaisal178@gmail.com">hammadfaisal178@gmail.com</a>
+                        Hire Me
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image">
+                    <img src="./static/profile-pic.jpg" alt="Muhammad Hammad Faisal - Software Engineer" class="hero-profile-img">
+                </div>
+                <div class="hero-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="./static/profile-pic.jpg" alt="Muhammad Hammad Faisal" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-description">
+                        As a Software Engineer, I specialize in automation, web development, and crafting intuitive user experiences. Currently employed as a Software Automation Engineer at Arbisoft, I excel in utilizing WebdriverIO for automation tasks and contribute actively to open-source projects, including the WebdriverIO repository.
+                    </p>
+                    <p class="about-description">
+                        My expertise extends to Python and its various libraries, as well as web development technologies such as Django, Django DRF, and React. With a Bachelor's degree in Software Engineering from the University of Engineering and Technology, Lahore, I'm committed to lifelong learning and staying abreast of emerging technologies.
+                    </p>
+                    <p class="about-description">
+                        In addition to my role at Arbisoft, I freelance on Upwork, offering services in website development and desktop app development using Python (PyQT5) and Java (Swing). I take pride in creating robust, user-friendly applications that streamline processes and enhance user satisfaction.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
                     </div>
-                    <div class="contact-method">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+923444254413">+92 344 4254413</a>
-                    </div>
-                    <div class="contact-method">
-                        <i class="fab fa-github"></i>
-                        <a href="https://www.github.com/M-Hammad-Faisal">github.com/M-Hammad-Faisal</a>
-                    </div>
-                    <div class="contact-method">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/m-hammad-faisal/">linkedin.com/in/m-hammad-faisal</a>
+                    <div class="resume-buttons">
+                        <a href="./resume.html" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-file-alt"></i>
+                            View Resume
+                        </a>
+                        <a href="./resume.txt" class="btn btn-outline" download>
+                            <i class="fas fa-download"></i>
+                            Download TXT
+                        </a>
                     </div>
                 </div>
             </div>
-            <form class="contact-form" action="https://formsubmit.co/hammadfaisal178@gmail.com" method="POST">
-                <input type="text" name="_honey" style="display:none">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://m-hammad-faisal.github.io/thank-you.html">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn primary">Send Message</button>
-                <p class="form-success" style="display: none; color: green;">Message sent successfully!</p>
-            </form>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <p>© 2025 Muhammad Hammad Faisal. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://www.github.com/M-Hammad-Faisal" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/m-hammad-faisal/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">Test Automation</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>WebDriverIO</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-robot"></i>
+                            <span>Playwright</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-bug"></i>
+                            <span>Selenium</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Appium</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-chrome"></i>
+                            <span>Puppeteer</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-vials"></i>
+                            <span>PyTest</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">Backend Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i>
+                            <span>Django</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-network-wired"></i>
+                            <span>REST APIs</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-desktop"></i>
+                            <span>PyQT5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <span>Java Swing</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">Frontend Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">CI/CD & DevOps</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-gitlab"></i>
+                            <span>GitLab</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-jira"></i>
+                            <span>Jira</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>Cloud Functions</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Firestore</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-google"></i>
+                            <span>Cloud Run</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script src="script.js"></script>
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./static/json-compare.png" alt="JSON Compare Tool">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/M-Hammad-Faisal/json-compare" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://m-hammad-faisal.github.io/json-compare/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">JSON Compare Tool</h3>
+                        <p class="project-description">
+                            Professional JSON comparison tool with GitHub-style diff visualization, supporting both CLI and web interfaces with advanced diff algorithms.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">CLI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./static/task-nest-homepage.png" alt="Task Management Platform">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/M-Hammad-Faisal/Task-Nest" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://task-nest.fly.dev/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management Platform</h3>
+                        <p class="project-description">
+                            Full-stack task management application with real-time updates, team collaboration features, and comprehensive project tracking.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Django Channels</span>
+                            <span class="tech-tag">WebSockets</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./static/word-hunter.png" alt="Word Hunter Dictionary App">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/M-Hammad-Faisal/word-hunter" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://m-hammad-faisal.github.io/word-hunter" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Word Hunter Dictionary App</h3>
+                        <p class="project-description">
+                            React-based dictionary application with real-time API integration, audio playback, dark mode support, and advanced search capabilities.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Material-UI</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">PWA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./static/sauce-demo.png" alt="Web Testing Framework">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/M-Hammad-Faisal/Website-Tester" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.saucedemo.com/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Swag Labs Testing Framework</h3>
+                        <p class="project-description">
+                            Comprehensive test automation framework using Python and Playwright, featuring parallel execution, detailed reporting, and CI/CD integration.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Playwright</span>
+                            <span class="tech-tag">PyTest</span>
+                            <span class="tech-tag">Allure Reports</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./static/ollama-chat.png" alt="Ollama Chat Application">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/M-Hammad-Faisal/ollama-chat" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://ollama.com/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Ollama Chat Application</h3>
+                        <p class="project-description">
+                            Privacy-focused AI chat interface powered by local Ollama models with modern Material-UI design and advanced chat functionalities.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Material-UI</span>
+                            <span class="tech-tag">Ollama</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./assets/project-automation.jpg" alt="WebDriverIO Framework">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/M-Hammad-Faisal" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">WebDriverIO Automation Framework</h3>
+                        <p class="project-description">
+                            Enterprise-grade test automation framework built with WebDriverIO and TypeScript, featuring parallel execution, detailed reporting, and CI/CD integration.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">WebDriverIO</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Mocha</span>
+                            <span class="tech-tag">Allure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="job-title">Software Engineer</h3>
+                            <span class="company">Arbisoft</span>
+                            <span class="duration">June 2024 - Present</span>
+                        </div>
+                        <ul class="achievements">
+                            <li>Automated web scraping using Puppeteer (TypeScript/JavaScript) to extract targeted data from multiple websites</li>
+                            <li>Developed Python-based system utilizing Playwright for secure password management across user accounts</li>
+                            <li>Integrated solutions with Cloud Functions and Cloud Run for efficient deployment and management</li>
+                            <li>Ensured robust data security and operational reliability through automated solutions</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span>Puppeteer</span>
+                            <span>Playwright</span>
+                            <span>TypeScript</span>
+                            <span>Python</span>
+                            <span>Cloud Functions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="job-title">Jr. Software Engineer</h3>
+                            <span class="company">Arbisoft</span>
+                            <span class="duration">May 2023 - June 2024</span>
+                        </div>
+                        <ul class="achievements">
+                            <li>Developed automation solutions using WebdriverIO for both mobile (Android, iOS) and web automation projects</li>
+                            <li>Established and managed local grid for running test cases using Appium and Selenium Grid</li>
+                            <li>Collaborated with cross-functional teams to deliver user-centric solutions that exceeded client expectations</li>
+                            <li>Leveraged expertise in automation technologies to streamline processes and enhance productivity</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span>WebDriverIO</span>
+                            <span>Appium</span>
+                            <span>Selenium Grid</span>
+                            <span>Mobile Testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="job-title">Jr. Software Engineer</h3>
+                            <span class="company">Ginkgo Retail</span>
+                            <span class="duration">November 2022 - May 2023</span>
+                        </div>
+                        <ul class="achievements">
+                            <li>Developed and maintained responsive web applications using React and Django</li>
+                            <li>Ensured optimal performance across various devices and browsers</li>
+                            <li>Collaborated with cross-functional teams to design and implement innovative features</li>
+                            <li>Utilized best practices in software development to deliver scalable solutions</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span>React</span>
+                            <span>Django</span>
+                            <span>JavaScript</span>
+                            <span>HTML/CSS</span>
+                            <span>Git</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="job-title">Full Stack Developer - Intern</h3>
+                            <span class="company">Ginkgo Retail</span>
+                            <span class="duration">August 2022 - November 2022</span>
+                        </div>
+                        <ul class="achievements">
+                            <li>Developed a responsive Learning Management System using React and Django</li>
+                            <li>Ensured optimal performance across various devices and browsers</li>
+                            <li>Gained hands-on experience with full-stack development best practices</li>
+                            <li>Collaborated with development team on feature implementation and testing</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span>React</span>
+                            <span>Django</span>
+                            <span>Python</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Let's Build Something Amazing Together 🚀</h2>
+                    <p class="contact-description">
+                        Ready to work with a dedicated Software Engineer specializing in automation and full-stack development? 
+                        Let's discuss your project and how I can help you build robust, scalable solutions.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:hammadfaisal178@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>hammadfaisal178@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/M-Hammad-Faisal" class="contact-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/m-hammad-faisal" class="contact-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="tel:+923444254413" class="contact-link">
+                            <i class="fas fa-phone"></i>
+                            <span>+92 344 4254413</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 Muhammad Hammad Faisal. All rights reserved.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="https://github.com/M-Hammad-Faisal" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/m-hammad-faisal" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:hammadfaisal178@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,124 @@
+MUHAMMAD HAMMAD FAISAL
+Software Engineer | Test Automation Expert | Full Stack Developer
+
+CONTACT INFORMATION
+Email: hammadfaisal178@gmail.com
+Phone: +92 344 4254413
+LinkedIn: linkedin.com/in/m-hammad-faisal
+GitHub: github.com/M-Hammad-Faisal
+Location: Lahore, Punjab, Pakistan
+
+PROFESSIONAL SUMMARY
+Software Engineer with 2+ years of experience specializing in test automation, web development, and crafting intuitive user experiences. Currently employed as a Software Automation Engineer at Arbisoft, with expertise in WebdriverIO automation and active contributions to open-source projects including the WebdriverIO repository. Proficient in Python, Django, React, and modern web technologies. Experienced in freelance development on Upwork, delivering website and desktop applications using Python (PyQT5) and Java (Swing). Committed to creating robust, user-friendly applications that streamline processes and enhance user satisfaction.
+
+PROFESSIONAL EXPERIENCE
+
+Software Engineer
+Arbisoft | June 2024 - Present | Lahore, Punjab, Pakistan
+• Automated web scraping using Puppeteer (TypeScript/JavaScript) to extract targeted data from multiple websites, transforming it into structured formats stored in Firestore
+• Developed a Python-based system utilizing Playwright to securely update passwords across user accounts, integrated with Cloud Functions and Cloud Run for efficient management and deployment
+• Ensured robust data security and operational reliability through automated password management solutions, enhancing overall system efficiency
+• Collaborated cross-functionally to align scraping and password update functionalities with business objectives, delivering scalable and secure data automation solutions
+
+Jr. Software Engineer
+Arbisoft | May 2023 - June 2024 | Lahore, Punjab, Pakistan
+• Developed automation solutions using WebdriverIO for both mobile (Android, iOS) and web automation projects
+• Established and managed a local grid for running test cases using Appium and Selenium Grid, optimizing testing processes and improving efficiency
+• Collaborated with cross-functional teams to deliver user-centric solutions that exceeded client expectations
+• Leveraged expertise in automation technologies to streamline processes and enhance productivity
+
+Freelance Software Engineer
+Upwork | April 2023 - December 2024 | Remote
+• Specialized in providing high-quality website development and desktop application services using Python (PyQT5) and Java (Swing)
+• Delivered tailored solutions to clients' requirements, ensuring user-friendly interfaces and seamless functionality
+• Excelled in creating robust desktop applications with PyQT5 and Java Swing, meeting clients' diverse needs and specifications
+• Maintained top ratings and positive feedback from satisfied clients with successful project completion on time and within budget
+
+Jr. Software Engineer
+Ginkgo Retail | November 2022 - May 2023 | Lahore, Punjab, Pakistan
+• Developed and maintained responsive web applications using React and Django, ensuring optimal performance across various devices
+• Collaborated with cross-functional teams to design and implement innovative features, enhancing user engagement and satisfaction
+• Utilized best practices in software development to deliver scalable and efficient solutions, contributing to the overall success of projects
+
+Full Stack Developer - Intern
+Ginkgo Retail | August 2022 - November 2022 | Lahore, Punjab, Pakistan
+• Developed a responsive Learning Management System using React and Django, ensuring optimal performance across various devices
+• Gained hands-on experience with full-stack development lifecycle and agile methodologies
+
+TECHNICAL SKILLS
+
+Test Automation
+WebDriverIO, Playwright, Selenium, Appium, Puppeteer, PyTest, Test Framework Design, Automated Testing, Mobile Testing, Cross-browser Testing
+
+Programming Languages
+Python, JavaScript, TypeScript, Java, HTML5, CSS3, SQL
+
+Backend Development
+Django, Django DRF, Node.js, REST APIs, PostgreSQL, Database Design, Server-side Development
+
+Frontend Development
+React, Material-UI, Responsive Design, Single Page Applications, User Interface Design
+
+Desktop Development
+PyQt5, Java Swing, GUI Development, Cross-platform Applications
+
+DevOps & Tools
+GitLab, Jira, Git, Cloud Functions, Firestore, Cloud Run, CI/CD, Version Control, Project Management
+
+FEATURED PROJECTS
+
+JSON Compare Tool
+Professional JSON comparison tool with GitHub-style diff visualization, supporting both CLI and web interfaces with advanced diff algorithms.
+Technologies: JavaScript, Node.js, HTML/CSS, CLI
+GitHub: github.com/M-Hammad-Faisal/json-compare
+Live Demo: m-hammad-faisal.github.io/json-compare/
+
+Task Management Platform (Task Nest)
+Full-stack task management application with real-time updates, team collaboration features, and comprehensive project tracking capabilities.
+Technologies: Django, Django Channels, WebSockets, PostgreSQL
+GitHub: github.com/M-Hammad-Faisal/Task-Nest
+Live Demo: task-nest.fly.dev/
+
+Word Hunter Dictionary App
+React-based dictionary application with real-time API integration, audio playback, dark mode support, and advanced search capabilities.
+Technologies: React, Material-UI, API Integration, Progressive Web App
+GitHub: github.com/M-Hammad-Faisal/word-hunter
+Live Demo: m-hammad-faisal.github.io/word-hunter
+
+Swag Labs Testing Framework
+Comprehensive test automation framework using Python and Playwright, featuring parallel execution, detailed reporting, and CI/CD integration.
+Technologies: Python, Playwright, PyTest, Allure Reports
+GitHub: github.com/M-Hammad-Faisal/Website-Tester
+
+Ollama Chat Application
+Privacy-focused AI chat interface powered by local Ollama models with modern Material-UI design and advanced chat functionalities.
+Technologies: React, Material-UI, Ollama, JavaScript
+GitHub: github.com/M-Hammad-Faisal/ollama-chat
+
+WebDriverIO Automation Framework
+Enterprise-grade test automation framework built with WebDriverIO and TypeScript, featuring parallel execution, detailed reporting, and CI/CD integration.
+Technologies: WebDriverIO, TypeScript, Mocha, Allure Reports
+
+EDUCATION
+
+Bachelor of Engineering - Computer Engineering
+University of Engineering and Technology, Lahore
+October 2019 - May 2023
+
+CERTIFICATIONS
+
+TypeScript Variables and Data Types - Professional Development
+Python Data Structures - Professional Development  
+Using Python to Access Web Data - Professional Development
+Capstone: Retrieving, Processing, and Visualizing Data with Python - Professional Development
+Programming for Everybody (Getting Started with Python) - Professional Development
+
+ADDITIONAL INFORMATION
+
+Open Source Contributions: Active contributor to WebDriverIO repository and other open-source projects
+Professional Activities: Board of Governor and Director of Graphic Design at ACM UET Lahore (2020-2023)
+Freelance Experience: Successfully completed 30+ projects on Upwork with 100% client satisfaction rating
+Languages: English (Professional), Urdu (Native)
+
+KEYWORDS FOR ATS
+Software Engineer, Test Automation, WebDriverIO, Playwright, Selenium, Python, Django, React, JavaScript, TypeScript, Full Stack Developer, Automation Engineer, Quality Assurance, QA, Mobile Testing, Web Testing, API Testing, CI/CD, DevOps, Agile, Scrum, GitLab, Jira, PostgreSQL, Node.js, PyQt5, Java Swing, Desktop Applications, Web Applications, Open Source, Freelance, Remote Work
