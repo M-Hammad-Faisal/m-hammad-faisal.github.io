@@ -38,11 +38,13 @@ Welcome to my personal portfolio website! This modern, responsive site showcases
 
 ### Design & Features
 - **Navy + Teal Color Scheme** - Professional and modern palette
-- **Dark/Light Mode Toggle** - Persistent theme switching
+- **Dark/Light Mode Toggle** - Persistent theme switching  
 - **Responsive Design** - Mobile-first approach
 - **Smooth Animations** - Scroll-triggered animations and hover effects
+- **Profile Integration** - Professional headshot in hero section
+- **Resume System** - HTML and TXT download options
+- **Video Showcase** - Portfolio demonstration video
 - **Contact Form** - Functional form with validation
-- **Typing Animation** - Dynamic hero section
 
 ### Deployment
 - **GitHub Pages** - Automated deployment from main branch
@@ -137,23 +139,31 @@ open index.html
 
 ### File Structure
 ```
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles and responsive design
-├── script.js           # JavaScript functionality
-├── static/             # Assets directory
-│   ├── logo.png        # Site logo
-│   ├── profile-pic.jpg # Profile image
-│   └── project-*.png   # Project screenshots
-├── thank-you.html      # Form success page
-└── README.md           # This file
+portfolio/
+├── index.html          # Main portfolio page
+├── resume.html         # ATS-friendly HTML resume
+├── resume.txt          # Plain text resume
+├── thank-you.html      # Contact form success page
+├── css/
+│   └── styles.css      # Modern Navy+Teal styling
+├── js/
+│   └── script.js       # Interactive functionality
+├── assets/             # All media files
+│   ├── video.mov       # Portfolio demo video
+│   ├── profile-pic.jpg # Professional headshot
+│   ├── favicon.ico     # Site icon
+│   ├── logo.png        # Brand logo
+│   └── *.png           # Project screenshots
+└── README.md           # Documentation
 ```
 
 ### Customization
 1. **Update Content**: Modify `index.html` with your information
-2. **Styling**: Customize colors and spacing in `styles.css`
+2. **Styling**: Customize colors and spacing in `css/styles.css`
 3. **Add Projects**: Include new project cards in the projects section
-4. **Assets**: Replace images in the `static/` directory
-5. **Contact**: Update contact information and social links
+4. **Assets**: Replace images in the `assets/` directory
+5. **Resume**: Update `resume.html` and `resume.txt` with your details
+6. **Contact**: Update contact information and social links
 
 ## 📈 SEO & Analytics
 
@@ -182,6 +192,12 @@ React-based dictionary application with real-time API integration and dark mode 
 
 ### [Ollama Chat](https://github.com/M-Hammad-Faisal/ollama-chat)
 Privacy-focused AI chat interface powered by local Ollama models with modern Material-UI design.
+
+## 🎥 Video Showcase
+
+**Portfolio Demo Video**: [Watch the complete portfolio walkthrough](./assets/video.mov)
+
+*Experience the modern Navy+Teal design with seamless user interactions*
 
 ## 🤝 Contributing
 
