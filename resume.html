@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Hammad Faisal - Software Engineer Resume</title>
-    
-    <!-- SEO Meta Tags for Resume -->
-    <meta name="description" content="Muhammad Hammad Faisal - Software Engineer specializing in Test Automation, Full Stack Development, WebdriverIO, Python, React, Django">
-    <meta name="keywords" content="Software Engineer, Test Automation, WebdriverIO, Playwright, Python, Django, React, Full Stack Developer">
+    <title>Muhammad Hammad Faisal - QA Automation Engineer Resume</title>
+
+    <meta name="description" content="Muhammad Hammad Faisal - QA Automation Engineer specializing in Playwright, Cypress, WebdriverIO, Selenium, Appium, TypeScript, Python, CI/CD">
+    <meta name="keywords" content="QA Automation Engineer, Test Automation, Playwright, Cypress, WebdriverIO, Selenium, Appium, TypeScript, Python, CI/CD, Jenkins, GitHub Actions">
     <meta name="author" content="Muhammad Hammad Faisal">
-    
-    <!-- Google Fonts for Professional Typography -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
-        /* ATS-Friendly Resume Styles */
         :root {
             --primary-color: #2563eb;
             --secondary-color: #64748b;
@@ -27,665 +23,292 @@
             --text-secondary: #475569;
             --background: #ffffff;
             --border-color: #e2e8f0;
-            --accent-light: #f1f5f9;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
             background: var(--background);
             font-size: 14px;
         }
-
         .resume-container {
             max-width: 8.5in;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 0.75in;
             background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
-        /* Header Section */
-        .resume-header {
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 20px;
-        }
-
-        .resume-name {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-            letter-spacing: -0.025em;
-        }
-
-        .resume-title {
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .resume-contact {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .contact-item i {
-            width: 14px;
-            text-align: center;
-            color: var(--primary-color);
-        }
-
-        /* Section Styling */
-        .resume-section {
-            margin-bottom: 25px;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
-        }
-
-        /* Professional Summary */
-        .summary-text {
-            font-size: 14px;
-            line-height: 1.7;
-            color: var(--text-primary);
-            text-align: justify;
-        }
-
-        /* Experience Section */
-        .experience-item {
-            margin-bottom: 20px;
-            page-break-inside: avoid;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-        }
-
-        .job-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .company-name {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--primary-color);
-            margin-top: 2px;
-        }
-
-        .job-duration {
-            font-size: 13px;
-            color: var(--text-secondary);
-            font-weight: 500;
-            white-space: nowrap;
-        }
-
-        .job-location {
-            font-size: 13px;
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-top: 2px;
-        }
-
-        .job-achievements {
-            list-style: none;
-            margin-top: 10px;
-        }
-
-        .job-achievements li {
-            margin-bottom: 6px;
-            padding-left: 18px;
-            position: relative;
-            font-size: 14px;
-            line-height: 1.5;
-            color: var(--text-primary);
-        }
-
-        .job-achievements li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category {
-            margin-bottom: 15px;
-        }
-
-        .skill-category-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.025em;
-        }
-
-        .skill-list {
-            font-size: 13px;
-            line-height: 1.6;
-            color: var(--text-primary);
-        }
-
-        /* Education Section */
-        .education-item {
-            margin-bottom: 15px;
-        }
-
-        .degree-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .school-name {
-            font-size: 14px;
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-top: 2px;
-        }
-
-        .education-duration {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-top: 2px;
-        }
-
-        /* Projects Section */
-        .project-item {
-            margin-bottom: 15px;
-        }
-
-        .project-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .project-description {
-            font-size: 13px;
-            line-height: 1.5;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .project-tech {
-            font-size: 12px;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-        
-        .project-links {
-            font-size: 11px;
-            color: var(--primary-color);
-            margin-top: 4px;
-            font-weight: 500;
-        }
-
-        /* Certifications */
-        .certification-item {
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: var(--text-primary);
-        }
-
-        .certification-name {
-            font-weight: 500;
-        }
-
-        .certification-issuer {
-            color: var(--text-secondary);
-            font-size: 13px;
-        }
-
-        /* Print Styles for PDF Export */
+        .resume-header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 20px; }
+        .resume-name { font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+        .resume-title { font-size: 16px; font-weight: 500; color: var(--primary-color); margin-bottom: 15px; }
+        .resume-contact { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; font-size: 13px; color: var(--text-secondary); }
+        .contact-item { display: flex; align-items: center; gap: 6px; }
+        .contact-item i { width: 14px; text-align: center; color: var(--primary-color); }
+        .resume-section { margin-bottom: 25px; }
+        .section-title { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
+        .summary-text { font-size: 14px; line-height: 1.7; color: var(--text-primary); }
+        .experience-item { margin-bottom: 20px; page-break-inside: avoid; }
+        .experience-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; flex-wrap: wrap; }
+        .job-title { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+        .company-name { font-size: 14px; font-weight: 500; color: var(--primary-color); margin-top: 2px; }
+        .job-duration { font-size: 13px; color: var(--text-secondary); font-weight: 500; white-space: nowrap; }
+        .job-location { font-size: 13px; color: var(--text-secondary); font-style: italic; margin-top: 2px; }
+        .job-achievements { list-style: none; margin-top: 10px; }
+        .job-achievements li { margin-bottom: 6px; padding-left: 18px; position: relative; font-size: 14px; line-height: 1.55; color: var(--text-primary); }
+        .job-achievements li::before { content: "•"; position: absolute; left: 0; color: var(--primary-color); font-weight: bold; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .skill-category { margin-bottom: 15px; }
+        .skill-category-title { font-size: 13px; font-weight: 600; color: var(--primary-color); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.025em; }
+        .skill-list { font-size: 13px; line-height: 1.6; color: var(--text-primary); }
+        .education-item { margin-bottom: 15px; }
+        .degree-title { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+        .school-name { font-size: 14px; color: var(--primary-color); font-weight: 500; margin-top: 2px; }
+        .education-duration { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+        .project-item { margin-bottom: 15px; }
+        .project-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; }
+        .project-description { font-size: 13px; line-height: 1.5; color: var(--text-primary); margin-bottom: 3px; }
+        .project-tech { font-size: 12px; color: var(--text-secondary); font-style: italic; }
+        .project-links { font-size: 11px; color: var(--primary-color); margin-top: 3px; font-weight: 500; }
+        .certification-item { margin-bottom: 6px; font-size: 13px; color: var(--text-primary); }
+        .export-buttons { position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 1000; }
+        .export-btn { padding: 10px 16px; background: var(--primary-color); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+        .export-btn:hover { background: #1d4ed8; }
         @media print {
-            body {
-                font-size: 12px;
-                line-height: 1.4;
-            }
-            
-            .resume-container {
-                box-shadow: none;
-                margin: 0;
-                padding: 0.5in;
-                max-width: none;
-            }
-            
-            .resume-section {
-                margin-bottom: 20px;
-            }
-            
-            .experience-item {
-                page-break-inside: avoid;
-                margin-bottom: 15px;
-            }
-            
-            .section-title {
-                font-size: 16px;
-            }
-            
-            .resume-name {
-                font-size: 24px;
-            }
-            
-            .job-title {
-                font-size: 14px;
-            }
-            
-            .company-name {
-                font-size: 13px;
-            }
-            
-            .project-links {
-                font-size: 10px;
-            }
+            body { font-size: 12px; }
+            .resume-container { box-shadow: none; margin: 0; padding: 0.5in; }
+            .export-buttons { display: none; }
+            .experience-item { page-break-inside: avoid; }
         }
-
-        /* Export Buttons */
-        .export-buttons {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            z-index: 1000;
-        }
-
-        .export-btn {
-            padding: 10px 16px;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: background-color 0.2s ease;
-        }
-
-        .export-btn:hover {
-            background: #1d4ed8;
-        }
-
-        @media print {
-            .export-buttons {
-                display: none;
-            }
-        }
-
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .resume-container {
-                padding: 20px;
-                margin: 10px;
-            }
-            
-            .resume-contact {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            
-            .experience-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .job-duration {
-                margin-top: 5px;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+            .resume-container { padding: 20px; margin: 10px; }
+            .resume-contact { flex-direction: column; align-items: center; gap: 10px; }
+            .experience-header { flex-direction: column; }
+            .skills-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Export Buttons -->
-    <div class="export-buttons">
-        <button class="export-btn" onclick="window.print()">
-            <i class="fas fa-file-pdf"></i>
-            Export PDF
-        </button>
-        <button class="export-btn" onclick="copyResumeText()">
-            <i class="fas fa-copy"></i>
-            Copy Text
-        </button>
-    </div>
 
-    <div class="resume-container">
-        <!-- Header -->
-        <header class="resume-header">
-            <h1 class="resume-name">Muhammad Hammad Faisal</h1>
-            <p class="resume-title">Software Engineer | Test Automation Expert | Full Stack Developer</p>
-            <div class="resume-contact">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>hammadfaisal178@gmail.com</span>
+<div class="export-buttons">
+    <button class="export-btn" onclick="window.print()">
+        <i class="fas fa-file-pdf"></i> Export PDF
+    </button>
+    <button class="export-btn" onclick="copyResumeText()">
+        <i class="fas fa-copy"></i> Copy Text
+    </button>
+</div>
+
+<div class="resume-container">
+
+    <!-- HEADER -->
+    <header class="resume-header">
+        <h1 class="resume-name">Muhammad Hammad Faisal</h1>
+        <p class="resume-title">QA Automation Engineer | Framework Architect | Bot & Scraping Specialist</p>
+        <div class="resume-contact">
+            <div class="contact-item"><i class="fas fa-envelope"></i><span>hammadfaisal178@gmail.com</span></div>
+            <div class="contact-item"><i class="fas fa-phone"></i><span>+92 344 4254413</span></div>
+            <div class="contact-item"><i class="fab fa-linkedin"></i><span>linkedin.com/in/m-hammad-faisal</span></div>
+            <div class="contact-item"><i class="fab fa-github"></i><span>github.com/M-Hammad-Faisal</span></div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Lahore, Pakistan</span></div>
+        </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <section class="resume-section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary-text">
+            QA Automation Engineer with 2+ years of experience building and scaling test automation frameworks for web, mobile,
+            and data-intensive applications. Proficient in Playwright, Cypress, WebdriverIO, Selenium, and Appium across TypeScript,
+            JavaScript, and Python. Designed cross-platform automation architectures using factory and wrapper patterns.
+            Experienced in CI/CD pipeline setup on GitHub Actions, GitLab CI, and Jenkins. Proven track record of solving
+            high-complexity automation challenges including bot detection bypass, async flow control, and large-scale codebase
+            refactoring under tight deadlines.
+        </p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="resume-section">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <h3 class="job-title">Software Engineer</h3>
+                    <p class="company-name">Arbisoft</p>
+                    <p class="job-location">Lahore, Pakistan</p>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+92 344 4254413</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>linkedin.com/in/m-hammad-faisal</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <span>github.com/M-Hammad-Faisal</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Lahore, Punjab, Pakistan</span>
-                </div>
+                <div class="job-duration">June 2024 – Present</div>
             </div>
-        </header>
-
-        <!-- Professional Summary -->
-        <section class="resume-section">
-            <h2 class="section-title">Professional Summary</h2>
-            <p class="summary-text">
-                Software Engineer with 2+ years of experience specializing in test automation, web development, and crafting intuitive user experiences. Currently employed as a Software Automation Engineer at Arbisoft, with expertise in WebdriverIO automation and active contributions to open-source projects including the WebdriverIO repository. Proficient in Python, Django, React, and modern web technologies. Experienced in freelance development on Upwork, delivering website and desktop applications using Python (PyQT5) and Java (Swing). Committed to creating robust, user-friendly applications that streamline processes and enhance user satisfaction.
-            </p>
-        </section>
-
-        <!-- Professional Experience -->
-        <section class="resume-section">
-            <h2 class="section-title">Professional Experience</h2>
-            
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3 class="job-title">Software Engineer</h3>
-                        <p class="company-name">Arbisoft</p>
-                        <p class="job-location">Lahore, Punjab, Pakistan</p>
-                    </div>
-                    <div class="job-duration">June 2024 - Present</div>
-                </div>
-                <ul class="job-achievements">
-                    <li>Automated web scraping using Puppeteer (TypeScript/JavaScript) to extract targeted data from multiple websites, transforming it into structured formats stored in Firestore</li>
-                    <li>Developed a Python-based system utilizing Playwright to securely update passwords across user accounts, integrated with Cloud Functions and Cloud Run for efficient management and deployment</li>
-                    <li>Ensured robust data security and operational reliability through automated password management solutions, enhancing overall system efficiency</li>
-                    <li>Collaborated cross-functionally to align scraping and password update functionalities with business objectives, delivering scalable and secure data automation solutions</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3 class="job-title">Jr. Software Engineer</h3>
-                        <p class="company-name">Arbisoft</p>
-                        <p class="job-location">Lahore, Punjab, Pakistan</p>
-                    </div>
-                    <div class="job-duration">May 2023 - June 2024</div>
-                </div>
-                <ul class="job-achievements">
-                    <li>Developed automation solutions using WebdriverIO for both mobile (Android, iOS) and web automation projects</li>
-                    <li>Established and managed a local grid for running test cases using Appium and Selenium Grid, optimizing testing processes and improving efficiency</li>
-                    <li>Collaborated with cross-functional teams to deliver user-centric solutions that exceeded client expectations</li>
-                    <li>Leveraged expertise in automation technologies to streamline processes and enhance productivity</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3 class="job-title">Freelance Software Engineer</h3>
-                        <p class="company-name">Upwork</p>
-                        <p class="job-location">Remote</p>
-                    </div>
-                    <div class="job-duration">April 2023 - December 2024</div>
-                </div>
-                <ul class="job-achievements">
-                    <li>Specialized in providing high-quality website development and desktop application services using Python (PyQT5) and Java (Swing)</li>
-                    <li>Delivered tailored solutions to clients' requirements, ensuring user-friendly interfaces and seamless functionality</li>
-                    <li>Excelled in creating robust desktop applications with PyQT5 and Java Swing, meeting clients' diverse needs and specifications</li>
-                    <li>Maintained top ratings and positive feedback from satisfied clients with successful project completion on time and within budget</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3 class="job-title">Jr. Software Engineer</h3>
-                        <p class="company-name">Ginkgo Retail</p>
-                        <p class="job-location">Lahore, Punjab, Pakistan</p>
-                    </div>
-                    <div class="job-duration">November 2022 - May 2023</div>
-                </div>
-                <ul class="job-achievements">
-                    <li>Developed and maintained responsive web applications using React and Django, ensuring optimal performance across various devices</li>
-                    <li>Collaborated with cross-functional teams to design and implement innovative features, enhancing user engagement and satisfaction</li>
-                    <li>Utilized best practices in software development to deliver scalable and efficient solutions, contributing to the overall success of projects</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3 class="job-title">Full Stack Developer - Intern</h3>
-                        <p class="company-name">Ginkgo Retail</p>
-                        <p class="job-location">Lahore, Punjab, Pakistan</p>
-                    </div>
-                    <div class="job-duration">August 2022 - November 2022</div>
-                </div>
-                <ul class="job-achievements">
-                    <li>Developed a responsive Learning Management System using React and Django, ensuring optimal performance across various devices</li>
-                    <li>Gained hands-on experience with full-stack development lifecycle and agile methodologies</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Technical Skills -->
-        <section class="resume-section">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Test Automation</h3>
-                    <p class="skill-list">WebDriverIO, Playwright, Selenium, Appium, Puppeteer, PyTest, Test Framework Design, Automated Testing, Mobile Testing, Cross-browser Testing</p>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Programming Languages</h3>
-                    <p class="skill-list">Python, JavaScript, TypeScript, Java, HTML5, CSS3, SQL</p>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Backend Development</h3>
-                    <p class="skill-list">Django, Django DRF, Node.js, REST APIs, PostgreSQL, Database Design, Server-side Development</p>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Frontend Development</h3>
-                    <p class="skill-list">React, Material-UI, Responsive Design, Single Page Applications, User Interface Design</p>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Desktop Development</h3>
-                    <p class="skill-list">PyQt5, Java Swing, GUI Development, Cross-platform Applications</p>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">DevOps & Tools</h3>
-                    <p class="skill-list">GitLab, Jira, Git, Cloud Functions, Firestore, Cloud Run, CI/CD, Version Control, Project Management</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Projects -->
-        <section class="resume-section">
-            <h2 class="section-title">Featured Projects</h2>
-            
-            <div class="project-item">
-                <h3 class="project-title">JSON Compare Tool</h3>
-                <p class="project-description">Professional JSON comparison tool with GitHub-style diff visualization, supporting both CLI and web interfaces with advanced diff algorithms.</p>
-                <p class="project-tech">Technologies: JavaScript, Node.js, HTML/CSS, CLI</p>
-                <p class="project-links">GitHub: github.com/M-Hammad-Faisal/json-compare | Live Demo: m-hammad-faisal.github.io/json-compare/</p>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">Task Management Platform (Task Nest)</h3>
-                <p class="project-description">Full-stack task management application with real-time updates, team collaboration features, and comprehensive project tracking capabilities.</p>
-                <p class="project-tech">Technologies: Django, Django Channels, WebSockets, PostgreSQL</p>
-                <p class="project-links">GitHub: github.com/M-Hammad-Faisal/Task-Nest | Live Demo: task-nest.fly.dev/</p>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">Word Hunter Dictionary App</h3>
-                <p class="project-description">React-based dictionary application with real-time API integration, audio playback, dark mode support, and advanced search capabilities.</p>
-                <p class="project-tech">Technologies: React, Material-UI, API Integration, Progressive Web App</p>
-                <p class="project-links">GitHub: github.com/M-Hammad-Faisal/word-hunter | Live Demo: m-hammad-faisal.github.io/word-hunter</p>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">Swag Labs Testing Framework</h3>
-                <p class="project-description">Comprehensive test automation framework using Python and Playwright, featuring parallel execution, detailed reporting, and CI/CD integration.</p>
-                <p class="project-tech">Technologies: Python, Playwright, PyTest, Allure Reports</p>
-                <p class="project-links">GitHub: github.com/M-Hammad-Faisal/Website-Tester</p>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">Ollama Chat Application</h3>
-                <p class="project-description">Privacy-focused AI chat interface powered by local Ollama models with modern Material-UI design and advanced chat functionalities.</p>
-                <p class="project-tech">Technologies: React, Material-UI, Ollama, JavaScript</p>
-                <p class="project-links">GitHub: github.com/M-Hammad-Faisal/ollama-chat</p>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">WebDriverIO Automation Framework</h3>
-                <p class="project-description">Enterprise-grade test automation framework built with WebDriverIO and TypeScript, featuring parallel execution, detailed reporting, and CI/CD integration.</p>
-                <p class="project-tech">Technologies: WebDriverIO, TypeScript, Mocha, Allure Reports</p>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section class="resume-section">
-            <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <h3 class="degree-title">Bachelor of Engineering - Computer Engineering</h3>
-                <p class="school-name">University of Engineering and Technology, Lahore</p>
-                <p class="education-duration">October 2019 - May 2023</p>
-            </div>
-        </section>
-
-        <!-- Certifications -->
-        <section class="resume-section">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certification-item">
-                <span class="certification-name">TypeScript Variables and Data Types</span>
-                <span class="certification-issuer"> - Professional Development</span>
-            </div>
-            <div class="certification-item">
-                <span class="certification-name">Python Data Structures</span>
-                <span class="certification-issuer"> - Professional Development</span>
-            </div>
-            <div class="certification-item">
-                <span class="certification-name">Using Python to Access Web Data</span>
-                <span class="certification-issuer"> - Professional Development</span>
-            </div>
-            <div class="certification-item">
-                <span class="certification-name">Capstone: Retrieving, Processing, and Visualizing Data with Python</span>
-                <span class="certification-issuer"> - Professional Development</span>
-            </div>
-            <div class="certification-item">
-                <span class="certification-name">Programming for Everybody (Getting Started with Python)</span>
-                <span class="certification-issuer"> - Professional Development</span>
-            </div>
-        </section>
-
-        <!-- Additional Information -->
-        <section class="resume-section">
-            <h2 class="section-title">Additional Information</h2>
             <ul class="job-achievements">
-                <li><strong>Open Source Contributions:</strong> Active contributor to WebDriverIO repository and other open-source projects</li>
-                <li><strong>Professional Activities:</strong> Board of Governor and Director of Graphic Design at ACM UET Lahore (2020-2023)</li>
-                <li><strong>Freelance Experience:</strong> Successfully completed 30+ projects on Upwork with 100% client satisfaction rating</li>
-                <li><strong>Languages:</strong> English (Professional), Urdu (Native)</li>
+                <li>Consolidated 23 separate payer integrations under a single bot ID to resolve session conflict issues — refactored and merged common files across all 23 payers within a 2-week deadline including weekend work. Received public recognition and compensatory leave from Team Lead.</li>
+                <li>Built custom anti-detection scripts to bypass AWS CAPTCHA, Cloudflare, and reCAPTCHA v2/v3 — iterating through random mouse movements, rotating residential proxies, Patchright stealth fork, and custom navigator mocking with dummy browser extensions. Unblocked multiple critical client sites.</li>
+                <li>Designed a state-based password management system to handle credential rotation across active bots — managed thousands of credentials without a single account getting flagged or banned.</li>
+                <li>Resolved async-sync iteration problem under strict client constraint (no loops allowed) using async library's mapSeries and eachSeries for reliable sequential multi-step scraping flows.</li>
+                <li>Proposed and architected a FastAPI microservice in Python for PDF data extraction using factory pattern — chosen over Node.js due to superior Python library support for PDF parsing.</li>
+                <li>Established PR review and creation checklists and enforced TypeScript coding standards across the team (prefer find over filter+[0], use unknown over any). Adopted across multiple projects.</li>
+                <li>Built an Outline VPN client clone in Python using ShadowSocks proxy to resolve macOS compatibility issues blocking team access to geo-restricted scraping targets.</li>
             </ul>
-        </section>
-        
-        <!-- Keywords for ATS -->
-        <section class="resume-section" style="display: none;">
-            <h2 class="section-title">Keywords for ATS</h2>
-            <p class="summary-text">
-                Software Engineer, Test Automation, WebDriverIO, Playwright, Selenium, Python, Django, React, JavaScript, TypeScript, Full Stack Developer, Automation Engineer, Quality Assurance, QA, Mobile Testing, Web Testing, API Testing, CI/CD, DevOps, Agile, Scrum, GitLab, Jira, PostgreSQL, Node.js, PyQt5, Java Swing, Desktop Applications, Web Applications, Open Source, Freelance, Remote Work
-            </p>
-        </section>
-    </div>
+        </div>
 
-    <script>
-        // Copy resume text functionality
-        function copyResumeText() {
-            const resumeContainer = document.querySelector('.resume-container');
-            const range = document.createRange();
-            range.selectNode(resumeContainer);
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
-            
-            try {
-                document.execCommand('copy');
-                alert('Resume text copied to clipboard!');
-            } catch (err) {
-                alert('Failed to copy text. Please try again.');
-            }
-            
-            window.getSelection().removeAllRanges();
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <h3 class="job-title">Jr. Software Engineer — Test Automation</h3>
+                    <p class="company-name">Arbisoft</p>
+                    <p class="job-location">Lahore, Pakistan</p>
+                </div>
+                <div class="job-duration">May 2023 – June 2024</div>
+            </div>
+            <ul class="job-achievements">
+                <li>Designed and built a framework abstraction wrapper over Cypress enabling zero-touch migration to Playwright — entire codebase depended on one interface, not the framework directly. Pattern adopted by multiple Arbisoft projects including Appium-to-WebdriverIO migrations.</li>
+                <li>Solved a dynamic recursive Q&amp;A automation problem where question count and paths varied based on user choices — implemented recursive traversal to handle variable-depth flows with no fixed loop structure.</li>
+                <li>Built cross-platform automation framework using WebdriverIO with factory pattern to unify Android, iOS, and web test configurations — minimized duplication while maintaining platform-specific flexibility.</li>
+                <li>Established and managed local Appium + Selenium Grid infrastructure for parallel distributed test execution across mobile and web targets.</li>
+                <li>Onboarded and mentored teammates on WebdriverIO and Selenium Grid — led internal knowledge-sharing sessions on framework setup, parallel execution, and best practices.</li>
+                <li>Contributed to bringing the Zuub project to Arbisoft — helped establish quality standards and automation infrastructure from the ground up.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <h3 class="job-title">Jr. Software Engineer</h3>
+                    <p class="company-name">Ginkgo Retail</p>
+                    <p class="job-location">Lahore, Pakistan</p>
+                </div>
+                <div class="job-duration">August 2022 – May 2023</div>
+            </div>
+            <ul class="job-achievements">
+                <li>Developed and maintained responsive web applications using React and Django, ensuring optimal performance across devices.</li>
+                <li>Built a Learning Management System during internship phase — contributed across the full-stack development lifecycle using agile methodologies.</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+    <section class="resume-section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3 class="skill-category-title">Test Automation</h3>
+                <p class="skill-list">Playwright, Cypress, WebdriverIO, Selenium, Appium, Puppeteer, PyTest, Selenium Grid, Page Object Model</p>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-category-title">Programming Languages</h3>
+                <p class="skill-list">TypeScript, JavaScript, Python, Java, HTML5, CSS3</p>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-category-title">CI/CD & DevOps</h3>
+                <p class="skill-list">GitHub Actions, GitLab CI, Jenkins, Git, Docker</p>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-category-title">API Testing</h3>
+                <p class="skill-list">Postman, Supertest, REST APIs</p>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-category-title">Design Patterns</h3>
+                <p class="skill-list">Factory Pattern, Wrapper/Abstraction Pattern, Page Object Model, Recursive Patterns</p>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-category-title">Tools & Platforms</h3>
+                <p class="skill-list">Jira, Allure Reports, Mocha, Firestore, Cloud Functions, Cloud Run, Postman</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="resume-section">
+        <h2 class="section-title">Key Projects</h2>
+
+        <div class="project-item">
+            <h3 class="project-title">Framework Abstraction Wrapper (Cypress → Playwright)</h3>
+            <p class="project-description">Abstraction layer over Cypress enabling entire codebase migration to Playwright via a single-file update. Adopted across multiple Arbisoft projects for framework transitions.</p>
+            <p class="project-tech">Technologies: Cypress, Playwright, TypeScript, Design Patterns</p>
+        </div>
+
+        <div class="project-item">
+            <h3 class="project-title">Anti-Detection Scraping Engine</h3>
+            <p class="project-description">Custom bot engine with navigator mocking, dummy extension injection, rotating residential proxies, and Patchright stealth integration. Bypassed AWS CAPTCHA, Cloudflare, and reCAPTCHA v2/v3 across multiple production sites.</p>
+            <p class="project-tech">Technologies: Playwright, Puppeteer, TypeScript, Patchright</p>
+        </div>
+
+        <div class="project-item">
+            <h3 class="project-title">WebdriverIO Cross-Platform Automation Framework</h3>
+            <p class="project-description">Enterprise-grade framework using factory pattern to unify Android, iOS, and web test configurations with parallel execution via Selenium Grid and Allure reporting.</p>
+            <p class="project-tech">Technologies: WebdriverIO, TypeScript, Appium, Selenium Grid, Allure Reports</p>
+            <p class="project-links">GitHub: github.com/M-Hammad-Faisal</p>
+        </div>
+
+        <div class="project-item">
+            <h3 class="project-title">Swag Labs Testing Framework</h3>
+            <p class="project-description">Python + Playwright test automation framework with POM, parallel execution, Allure reporting, and GitHub Actions CI/CD integration.</p>
+            <p class="project-tech">Technologies: Python, Playwright, PyTest, Allure Reports, GitHub Actions</p>
+            <p class="project-links">GitHub: github.com/M-Hammad-Faisal/Website-Tester</p>
+        </div>
+
+        <div class="project-item">
+            <h3 class="project-title">JSON Compare Tool</h3>
+            <p class="project-description">Professional JSON comparison tool with GitHub-style diff visualization, CLI and web interfaces.</p>
+            <p class="project-tech">Technologies: JavaScript, Node.js, HTML/CSS, CLI</p>
+            <p class="project-links">Live: m-hammad-faisal.github.io/json-compare/ | GitHub: github.com/M-Hammad-Faisal/json-compare</p>
+        </div>
+
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="resume-section">
+        <h2 class="section-title">Education</h2>
+        <div class="education-item">
+            <h3 class="degree-title">Bachelor of Engineering — Computer Engineering</h3>
+            <p class="school-name">University of Engineering and Technology, Lahore</p>
+            <p class="education-duration">October 2019 – May 2023</p>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="resume-section">
+        <h2 class="section-title">Certifications</h2>
+        <div class="certification-item">TypeScript Variables and Data Types — Professional Development</div>
+        <div class="certification-item">Python Data Structures — Professional Development</div>
+        <div class="certification-item">Using Python to Access Web Data — Professional Development</div>
+        <div class="certification-item">Capstone: Retrieving, Processing, and Visualizing Data with Python — Professional Development</div>
+        <div class="certification-item">Programming for Everybody (Getting Started with Python) — Professional Development</div>
+    </section>
+
+    <!-- ADDITIONAL -->
+    <section class="resume-section">
+        <h2 class="section-title">Additional</h2>
+        <ul class="job-achievements">
+            <li><strong>Open Source:</strong> Active contributor to WebdriverIO repository</li>
+            <li><strong>Leadership:</strong> Board of Governor and Director of Graphic Design at ACM UET Lahore (2020–2023)</li>
+            <li><strong>Languages:</strong> English (Professional), Urdu (Native), Punjabi (Native)</li>
+        </ul>
+    </section>
+
+    <!-- ATS KEYWORDS (hidden) -->
+    <section class="resume-section" style="display:none;">
+        <p>QA Automation Engineer, Test Automation, Playwright, Cypress, WebdriverIO, Selenium, Appium, Puppeteer, TypeScript, JavaScript, Python, Java, CI/CD, GitHub Actions, GitLab CI, Jenkins, Git, Postman, API Testing, Supertest, Allure Reports, Selenium Grid, Factory Pattern, Page Object Model, Mobile Testing, Android, iOS, Web Testing, Bot Detection Bypass, Web Scraping, FastAPI, Node.js, Django, React, Agile, Scrum, Jira, Lahore, Pakistan</p>
+    </section>
+
+</div>
+
+<script>
+    function copyResumeText() {
+        const el = document.querySelector('.resume-container');
+        const range = document.createRange();
+        range.selectNode(el);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        try {
+            document.execCommand('copy');
+            alert('Resume copied to clipboard!');
+        } catch(e) {
+            alert('Failed to copy. Please try manually.');
         }
-
-        // Print optimization
-        window.addEventListener('beforeprint', function() {
-            document.body.style.background = 'white';
-        });
-
-        window.addEventListener('afterprint', function() {
-            document.body.style.background = '';
-        });
-    </script>
+        window.getSelection().removeAllRanges();
+    }
+</script>
 </body>
 </html>
