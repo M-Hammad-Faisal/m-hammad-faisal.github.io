@@ -1,0 +1,48 @@
+/* Print Styles — applied when printing the portfolio index page */
+@media print {
+  /* Hide interactive UI */
+  .navbar,
+  .hero-buttons,
+  .contact-form-container,
+  .footer,
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  body {
+    font-size: 11pt;
+    color: #000;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Reset gradient text fills for print */
+  .section-title,
+  .hero-title,
+  .nav-logo {
+    -webkit-text-fill-color: #000;
+    background: none;
+    color: #000;
+  }
+
+  /* Keep section content together where feasible */
+  .skill-category,
+  .project-card,
+  .timeline-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Prevent orphan section headings */
+  .section-title {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}

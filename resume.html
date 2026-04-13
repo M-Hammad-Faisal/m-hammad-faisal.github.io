@@ -42,7 +42,7 @@
         .resume-header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); padding-bottom: 20px; }
         .resume-name { font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
         .resume-title { font-size: 16px; font-weight: 500; color: var(--primary-color); margin-bottom: 15px; }
-        .resume-contact { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; font-size: 13px; color: var(--text-secondary); }
+        .resume-contact { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 40px; font-size: 13px; color: var(--text-secondary); max-width: 560px; margin: 0 auto; }
         .contact-item { display: flex; align-items: center; gap: 6px; }
         .contact-item i { width: 14px; text-align: center; color: var(--primary-color); }
         .resume-section { margin-bottom: 25px; }
@@ -74,11 +74,86 @@
         .export-buttons { position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 1000; }
         .export-btn { padding: 10px 16px; background: var(--primary-color); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; }
         .export-btn:hover { background: #1d4ed8; }
+        @page {
+            size: A4;
+            margin: 0.55in 0.6in;
+        }
         @media print {
-            body { font-size: 12px; }
-            .resume-container { box-shadow: none; margin: 0; padding: 0.5in; }
-            .export-buttons { display: none; }
-            .experience-item { page-break-inside: avoid; }
+            body {
+                font-size: 11px;
+                line-height: 1.45;
+                margin: 0;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+                width: 100%;
+            }
+            .export-buttons { display: none !important; }
+
+            /* ── Header ── */
+            .resume-header {
+                margin-bottom: 16px;
+                padding-bottom: 12px;
+            }
+            .resume-name {
+                font-size: 22px;
+                margin-bottom: 4px;
+            }
+            .resume-title {
+                font-size: 11px;
+                margin-bottom: 8px;
+                color: var(--primary-color);
+            }
+            .resume-contact {
+                gap: 10px 20px;
+                font-size: 10px;
+            }
+            .contact-item { gap: 4px; }
+
+            /* ── Sections ── */
+            .section-title {
+                font-size: 11px;
+                margin-bottom: 8px;
+                padding-bottom: 3px;
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            .resume-section { margin-bottom: 16px; }
+
+            /* ── Experience ── */
+            .experience-item { page-break-inside: auto; break-inside: auto; margin-bottom: 14px; }
+            .experience-header { page-break-after: avoid; break-after: avoid; }
+            .job-title { font-size: 12px; }
+            .company-name { font-size: 11px; }
+            .job-duration, .job-location { font-size: 10px; }
+            .job-achievements li {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                orphans: 3;
+                widows: 3;
+                font-size: 10.5px;
+                margin-bottom: 4px;
+            }
+
+            /* ── Skills / Projects / Education ── */
+            .skills-grid { gap: 12px; }
+            .skill-category-title { font-size: 10px; }
+            .skill-list { font-size: 10px; }
+            .education-item, .project-item, .certification-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                font-size: 10.5px;
+            }
+            .project-title { font-size: 11px; }
+            .project-description, .project-tech, .project-links { font-size: 10px; }
+
+            a { color: var(--primary-color); text-decoration: none; }
         }
         @media (max-width: 768px) {
             .resume-container { padding: 20px; margin: 10px; }
@@ -118,12 +193,12 @@
     <section class="resume-section">
         <h2 class="section-title">Professional Summary</h2>
         <p class="summary-text">
-            QA Automation Engineer with 2+ years of experience building and scaling test automation frameworks for web, mobile,
-            and data-intensive applications. Proficient in Playwright, Cypress, WebdriverIO, Selenium, and Appium across TypeScript,
-            JavaScript, and Python. Designed cross-platform automation architectures using factory and wrapper patterns.
-            Experienced in CI/CD pipeline setup on GitHub Actions, GitLab CI, and Jenkins. Proven track record of solving
-            high-complexity automation challenges including bot detection bypass, async flow control, and large-scale codebase
-            refactoring under tight deadlines.
+            QA Automation Engineer with 3+ years of experience designing and scaling test automation frameworks for web, mobile,
+            and data-intensive applications. Expert in Playwright, Cypress, WebdriverIO, Selenium, and Appium across TypeScript,
+            JavaScript, and Python. Architected cross-platform frameworks using factory and abstraction wrapper patterns adopted
+            across multiple production projects. Hands-on with CI/CD pipelines on GitHub Actions, GitLab CI, and Jenkins.
+            Proven ability to solve high-complexity automation challenges — bot detection bypass, async flow control,
+            large-scale codebase refactoring, and framework migrations — under tight deadlines.
         </p>
     </section>
 
@@ -141,13 +216,13 @@
                 <div class="job-duration">June 2024 – Present</div>
             </div>
             <ul class="job-achievements">
-                <li>Consolidated 23 separate payer integrations under a single bot ID to resolve session conflict issues — refactored and merged common files across all 23 payers within a 2-week deadline including weekend work. Received public recognition and compensatory leave from Team Lead.</li>
-                <li>Built custom anti-detection scripts to bypass AWS CAPTCHA, Cloudflare, and reCAPTCHA v2/v3 — iterating through random mouse movements, rotating residential proxies, Patchright stealth fork, and custom navigator mocking with dummy browser extensions. Unblocked multiple critical client sites.</li>
-                <li>Designed a state-based password management system to handle credential rotation across active bots — managed thousands of credentials without a single account getting flagged or banned.</li>
-                <li>Resolved async-sync iteration problem under strict client constraint (no loops allowed) using async library's mapSeries and eachSeries for reliable sequential multi-step scraping flows.</li>
-                <li>Proposed and architected a FastAPI microservice in Python for PDF data extraction using factory pattern — chosen over Node.js due to superior Python library support for PDF parsing.</li>
-                <li>Established PR review and creation checklists and enforced TypeScript coding standards across the team (prefer find over filter+[0], use unknown over any). Adopted across multiple projects.</li>
-                <li>Built an Outline VPN client clone in Python using ShadowSocks proxy to resolve macOS compatibility issues blocking team access to geo-restricted scraping targets.</li>
+                <li>Refactored and consolidated 23 payer integrations under a unified bot ID — resolved session conflicts and merged shared files across all 23 payers within a 2-week deadline; received public recognition and compensatory leave from Team Lead.</li>
+                <li>Engineered anti-detection engine bypassing AWS CAPTCHA, Cloudflare, and reCAPTCHA v2/v3 using navigator mocking, dummy extension injection, rotating residential proxies, and Patchright stealth fork — unblocked multiple critical client sites.</li>
+                <li>Architected a state-based credential rotation system managing thousands of bot accounts with zero bans or flags across all active scraping targets.</li>
+                <li>Resolved a sequential async-iteration constraint (no loops allowed) using async library's mapSeries/eachSeries, enabling reliable multi-step scraping flows under strict client restrictions.</li>
+                <li>Proposed and built a FastAPI microservice for PDF data extraction using the factory pattern; selected over Node.js for superior Python PDF library support — now used across multiple projects.</li>
+                <li>Standardized TypeScript conventions and PR workflows across the team (find over filter+[0], unknown over any); patterns adopted on multiple active projects.</li>
+                <li>Built an Outline VPN client clone in Python (ShadowSocks) to unblock geo-restricted scraping targets that macOS system settings could not reach.</li>
             </ul>
         </div>
 
@@ -161,12 +236,12 @@
                 <div class="job-duration">May 2023 – June 2024</div>
             </div>
             <ul class="job-achievements">
-                <li>Designed and built a framework abstraction wrapper over Cypress enabling zero-touch migration to Playwright — entire codebase depended on one interface, not the framework directly. Pattern adopted by multiple Arbisoft projects including Appium-to-WebdriverIO migrations.</li>
-                <li>Solved a dynamic recursive Q&amp;A automation problem where question count and paths varied based on user choices — implemented recursive traversal to handle variable-depth flows with no fixed loop structure.</li>
-                <li>Built cross-platform automation framework using WebdriverIO with factory pattern to unify Android, iOS, and web test configurations — minimized duplication while maintaining platform-specific flexibility.</li>
-                <li>Established and managed local Appium + Selenium Grid infrastructure for parallel distributed test execution across mobile and web targets.</li>
-                <li>Onboarded and mentored teammates on WebdriverIO and Selenium Grid — led internal knowledge-sharing sessions on framework setup, parallel execution, and best practices.</li>
-                <li>Contributed to bringing the Zuub project to Arbisoft — helped establish quality standards and automation infrastructure from the ground up.</li>
+                <li>Designed a framework abstraction wrapper over Cypress enabling full migration to Playwright via a single-file swap — pattern adopted across multiple Arbisoft projects including Appium-to-WebdriverIO transitions.</li>
+                <li>Solved a dynamic recursive Q&amp;A automation challenge with variable question depth and branching paths — implemented recursive traversal replacing fragile fixed-loop logic.</li>
+                <li>Built an enterprise cross-platform framework using WebdriverIO + factory pattern to unify Android, iOS, and web configurations with shared logic and platform-specific flexibility.</li>
+                <li>Set up and managed local Appium + Selenium Grid infrastructure enabling parallel distributed execution across mobile and web targets.</li>
+                <li>Mentored teammates on WebdriverIO, Selenium Grid, and parallel test execution; led internal knowledge-sharing sessions on framework setup and best practices.</li>
+                <li>Helped onboard the Zuub project to Arbisoft — established automation infrastructure and quality standards from the ground up.</li>
             </ul>
         </div>
 
@@ -180,8 +255,9 @@
                 <div class="job-duration">August 2022 – May 2023</div>
             </div>
             <ul class="job-achievements">
-                <li>Developed and maintained responsive web applications using React and Django, ensuring optimal performance across devices.</li>
-                <li>Built a Learning Management System during internship phase — contributed across the full-stack development lifecycle using agile methodologies.</li>
+                <li>Built and maintained responsive web applications using React and Django across the full development lifecycle in an agile environment.</li>
+                <li>Developed a Learning Management System end-to-end during the internship phase — handled frontend (React), backend (Django), and deployment.</li>
+                <li>Gained early exposure to QA processes including manual testing, bug reporting, and validating feature completeness against acceptance criteria.</li>
             </ul>
         </div>
 
@@ -270,11 +346,11 @@
     <!-- CERTIFICATIONS -->
     <section class="resume-section">
         <h2 class="section-title">Certifications</h2>
-        <div class="certification-item">TypeScript Variables and Data Types — Professional Development</div>
-        <div class="certification-item">Python Data Structures — Professional Development</div>
-        <div class="certification-item">Using Python to Access Web Data — Professional Development</div>
-        <div class="certification-item">Capstone: Retrieving, Processing, and Visualizing Data with Python — Professional Development</div>
-        <div class="certification-item">Programming for Everybody (Getting Started with Python) — Professional Development</div>
+        <div class="certification-item">Programming for Everybody (Getting Started with Python) — University of Michigan via Coursera</div>
+        <div class="certification-item">Python Data Structures — University of Michigan via Coursera</div>
+        <div class="certification-item">Using Python to Access Web Data — University of Michigan via Coursera</div>
+        <div class="certification-item">Capstone: Retrieving, Processing, and Visualizing Data with Python — University of Michigan via Coursera</div>
+        <div class="certification-item">TypeScript Variables and Data Types — LinkedIn Learning</div>
     </section>
 
     <!-- ADDITIONAL -->
@@ -296,18 +372,28 @@
 
 <script>
     function copyResumeText() {
-        const el = document.querySelector('.resume-container');
-        const range = document.createRange();
-        range.selectNode(el);
-        window.getSelection().removeAllRanges();
-        window.getSelection().addRange(range);
-        try {
-            document.execCommand('copy');
-            alert('Resume copied to clipboard!');
-        } catch(e) {
-            alert('Failed to copy. Please try manually.');
+        const text = document.querySelector('.resume-container').innerText;
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text)
+                .then(() => alert('Resume copied to clipboard!'))
+                .catch(() => alert('Failed to copy. Please try manually.'));
+        } else {
+            // Fallback for non-secure contexts
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                alert('Resume copied to clipboard!');
+            } catch(e) {
+                alert('Failed to copy. Please try manually.');
+            }
+            document.body.removeChild(textarea);
         }
-        window.getSelection().removeAllRanges();
     }
 </script>
 </body>

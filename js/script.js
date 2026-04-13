@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initScrollEffects();
     initContactForm();
-    initTypingAnimation();
     initScrollSpy();
     initAnimationsOnScroll();
+    initMagicalBackground();
 });
 
 function initThemeToggle() {
@@ -168,69 +168,33 @@ function initScrollSpy() {
 // Contact Form Handling
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        // Check if form has FormSubmit action (real submission)
-        const hasRealAction = contactForm.action && contactForm.action.includes('formsubmit.co');
-        
-        if (hasRealAction) {
-            // Real form submission - let the form submit naturally
-            contactForm.addEventListener('submit', (e) => {
-                const submitBtn = contactForm.querySelector('.btn-primary');
-                const originalText = submitBtn.innerHTML;
-                
-                // Update button state
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                submitBtn.disabled = true;
-                
-                // Form will submit naturally and redirect to thank-you page
-            });
-        } else {
-            // Fallback: simulate submission for demo purposes
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                const formData = new FormData(contactForm);
-                const submitBtn = contactForm.querySelector('.btn-primary');
-                const originalText = submitBtn.innerHTML;
-                
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                submitBtn.disabled = true;
-                
-                try {
-                    await simulateFormSubmission(formData);
-                    
-                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                    submitBtn.style.background = 'var(--accent-green)';
-                    
-                    contactForm.reset();
-                    
-                    setTimeout(() => {
-                        window.location.href = './thank-you.html';
-                    }, 1500);
-                    
-                } catch (error) {
-                    submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
-                    submitBtn.style.background = 'var(--accent-orange)';
-                    
-                    showNotification('Failed to send message. Please try again.', 'error');
-                }
-                
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = '';
-                }, 3000);
-            });
-        }
-        
-        // Form validation
-        const inputs = contactForm.querySelectorAll('input, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('blur', validateField);
-            input.addEventListener('input', clearFieldError);
-        });
-    }
+
+    if (!contactForm) return;
+
+    const submitBtn = contactForm.querySelector('.btn-primary');
+    const originalBtnHTML = submitBtn.innerHTML;
+
+    contactForm.addEventListener('submit', () => {
+        // Clear any lingering field error spans before navigating away
+        contactForm.querySelectorAll('.field-error').forEach(el => el.remove());
+        contactForm.querySelectorAll('input, textarea').forEach(el => el.style.borderColor = '');
+
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        // Safety net: re-enable after 30s in case formsubmit.co fails silently
+        setTimeout(() => {
+            submitBtn.innerHTML = originalBtnHTML;
+            submitBtn.disabled = false;
+        }, 30000);
+    });
+
+    // Inline field validation on blur/input
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('blur', validateField);
+        input.addEventListener('input', clearFieldError);
+    });
 }
 
 // Form validation functions
@@ -275,10 +239,6 @@ function showFieldError(field, message) {
     const errorElement = document.createElement('span');
     errorElement.className = 'field-error';
     errorElement.textContent = message;
-    errorElement.style.color = 'var(--accent-orange)';
-    errorElement.style.fontSize = '0.875rem';
-    errorElement.style.marginTop = '0.25rem';
-    
     field.style.borderColor = 'var(--accent-orange)';
     field.parentNode.appendChild(errorElement);
 }
@@ -286,137 +246,6 @@ function showFieldError(field, message) {
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
-}
-
-// Simulate form submission (replace with your actual form handling)
-async function simulateFormSubmission(formData) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            // Simulate 90% success rate
-            if (Math.random() > 0.1) {
-                resolve();
-            } else {
-                reject(new Error('Submission failed'));
-            }
-        }, 2000);
-    });
-}
-
-// Notification system
-function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotifications = document.querySelectorAll('.notification');
-    existingNotifications.forEach(notif => notif.remove());
-    
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <i class="fas ${getNotificationIcon(type)}"></i>
-            <span>${message}</span>
-            <button class="notification-close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    `;
-    
-    // Styles
-    Object.assign(notification.style, {
-        position: 'fixed',
-        top: '20px',
-        right: '20px',
-        background: type === 'success' ? 'var(--accent-green)' : 
-                   type === 'error' ? 'var(--accent-orange)' : 'var(--primary-teal)',
-        color: 'white',
-        padding: '1rem 1.5rem',
-        borderRadius: '0.5rem',
-        boxShadow: 'var(--shadow-lg)',
-        zIndex: '10000',
-        transform: 'translateX(100%)',
-        transition: 'transform 0.3s ease',
-        minWidth: '300px',
-        maxWidth: '400px'
-    });
-    
-    document.body.appendChild(notification);
-    
-    // Animate in
-    requestAnimationFrame(() => {
-        notification.style.transform = 'translateX(0)';
-    });
-    
-    // Close button functionality
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-        closeNotification(notification);
-    });
-    
-    // Auto-close after 5 seconds
-    setTimeout(() => {
-        closeNotification(notification);
-    }, 5000);
-}
-
-function getNotificationIcon(type) {
-    switch (type) {
-        case 'success': return 'fa-check-circle';
-        case 'error': return 'fa-exclamation-circle';
-        default: return 'fa-info-circle';
-    }
-}
-
-function closeNotification(notification) {
-    notification.style.transform = 'translateX(100%)';
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.parentNode.removeChild(notification);
-        }
-    }, 300);
-}
-
-// Typing Animation for Hero Section
-function initTypingAnimation() {
-    const typingElement = document.querySelector('.typing-text');
-    
-    if (typingElement) {
-        const phrases = [
-            'Full Stack Developer',
-            'Problem Solver',
-            'Tech Enthusiast',
-            'Creative Thinker'
-        ];
-        
-        let currentPhrase = 0;
-        let currentChar = 0;
-        let isDeleting = false;
-        
-        function typeText() {
-            const currentText = phrases[currentPhrase];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentText.substring(0, currentChar - 1);
-                currentChar--;
-            } else {
-                typingElement.textContent = currentText.substring(0, currentChar + 1);
-                currentChar++;
-            }
-            
-            let typeSpeed = isDeleting ? 100 : 150;
-            
-            if (!isDeleting && currentChar === currentText.length) {
-                typeSpeed = 2000; // Pause at end
-                isDeleting = true;
-            } else if (isDeleting && currentChar === 0) {
-                isDeleting = false;
-                currentPhrase = (currentPhrase + 1) % phrases.length;
-                typeSpeed = 500; // Pause before typing new phrase
-            }
-            
-            setTimeout(typeText, typeSpeed);
-        }
-        
-        typeText();
-    }
 }
 
 // Animations on Scroll
@@ -463,107 +292,79 @@ function throttle(func, wait) {
     };
 }
 
-function debounce(func, wait, immediate) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            timeout = null;
-            if (!immediate) func(...args);
-        };
-        const callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func(...args);
-    };
-}
+// Magical starfield background for hero section
+function initMagicalBackground() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
 
-// Add loading animation styles dynamically
-function addAnimationStyles() {
-    const styles = `
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .animate-on-scroll.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .notification-content {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .notification-close {
-            background: none;
-            border: none;
-            color: inherit;
-            cursor: pointer;
-            padding: 0.25rem;
-            margin-left: auto;
-            border-radius: 0.25rem;
-            transition: background-color 0.2s ease;
-        }
-        
-        .notification-close:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .field-error {
-            display: block;
-            margin-top: 0.25rem;
-            font-size: 0.875rem;
-        }
-        
-        body.menu-open {
-            overflow: hidden;
-        }
-        
-        .typing-text::after {
-            content: '|';
-            color: var(--primary-teal);
-            animation: blink 1s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-    `;
-    
-    const styleSheet = document.createElement('style');
-    styleSheet.textContent = styles;
-    document.head.appendChild(styleSheet);
-}
+    const canvas = document.createElement('canvas');
+    canvas.className = 'arcane-canvas';
+    hero.insertBefore(canvas, hero.firstChild);
 
-// Initialize animation styles
-addAnimationStyles();
+    const ctx = canvas.getContext('2d');
+    let animFrame;
+    let paused = false;
 
-// Performance optimization: Lazy load images
-function initLazyLoading() {
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        document.querySelectorAll('img[data-src]').forEach(img => {
-            imageObserver.observe(img);
-        });
+    const STAR_COUNT = 180;
+    const stars = [];
+
+    function resize() {
+        canvas.width  = hero.offsetWidth;
+        canvas.height = hero.offsetHeight;
     }
-}
 
-// Initialize lazy loading
-initLazyLoading();
+    function randomStar() {
+        return {
+            x:     Math.random() * canvas.width,
+            y:     Math.random() * canvas.height,
+            r:     Math.random() * 1.4 + 0.3,
+            alpha: Math.random(),
+            speed: Math.random() * 0.004 + 0.002,
+            phase: Math.random() * Math.PI * 2,
+            // red or orange
+            hue:   Math.random() < 0.65 ? 0 : 24,
+        };
+    }
+
+    function init() {
+        resize();
+        stars.length = 0;
+        for (let i = 0; i < STAR_COUNT; i++) stars.push(randomStar());
+    }
+
+    function draw(ts) {
+        if (paused) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        stars.forEach(s => {
+            s.alpha = 0.3 + 0.7 * (0.5 + 0.5 * Math.sin(ts * s.speed + s.phase));
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `hsla(${s.hue}, 70%, 80%, ${s.alpha * 0.55})`;
+            ctx.fill();
+        });
+
+        animFrame = requestAnimationFrame(draw);
+    }
+
+    init();
+    animFrame = requestAnimationFrame(draw);
+
+    window.addEventListener('resize', () => {
+        resize();
+        stars.forEach(s => {
+            s.x = Math.random() * canvas.width;
+            s.y = Math.random() * canvas.height;
+        });
+    });
+
+    // Pause animation when hero is not visible (perf)
+    const observer = new IntersectionObserver(entries => {
+        paused = !entries[0].isIntersecting;
+        if (!paused) animFrame = requestAnimationFrame(draw);
+    }, { threshold: 0 });
+    observer.observe(hero);
+}
 
 // Console welcome message
 console.log(
