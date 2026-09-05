@@ -1,0 +1,134 @@
+MUHAMMAD HAMMAD FAISAL
+QA Automation Engineer (SDET) - Playwright | WebdriverIO | Selenium | Appium
+
+Email: hammadfaisal178@gmail.com
+Phone: +92 344 4254413
+Location: Lahore, Pakistan
+LinkedIn: linkedin.com/in/m-hammad-faisal
+GitHub: github.com/M-Hammad-Faisal
+
+
+PROFESSIONAL SUMMARY
+
+QA Automation Engineer / SDET with 3+ years building and scaling test automation frameworks
+for web, mobile, and data-intensive applications. Expert across Playwright, Cypress,
+WebdriverIO, Selenium, and Appium in TypeScript, JavaScript, and Python. Cut a 100+ file
+WebdriverIO suite to 60 files and its runtime from 8 hours to 2 with parallel execution and a
+distributed Selenium Grid; reduced regression time 40% on an earlier engagement. Designed
+framework abstraction layers that make tool migrations a single-file change and unified
+Android / iOS / web suites behind one factory-driven configuration. Strong on CI/CD (GitHub
+Actions, GitLab CI, Jenkins), Allure reporting, and Page Object Model.
+
+
+PROFESSIONAL EXPERIENCE
+
+Software Engineer
+Arbisoft - Lahore, Pakistan
+June 2024 - Present
+Core automation engineer across two client products - FixAlert (test automation) and Zuub
+(data pipelines).
+- Refactored FixAlert's inherited 100+ file WebdriverIO suite to 60 files with a cleaner
+  page-object architecture, removing large-scale duplication.
+- Implemented parallel execution and a distributed Selenium Grid that cut full-suite runtime
+  from 8 hours to 2 hours with no loss of coverage; integrated CI/CD via GitHub Actions.
+- Built production web-scraping and test-data pipelines for Zuub with Playwright and
+  Patchright - stealth browser configuration, fingerprint spoofing, and CAPTCHA bypass via
+  2Captcha integration.
+- Designed a state-based credential-rotation system for automated flows, cycling thousands of
+  accounts across active runs with zero lockouts.
+- Consolidated 23 automation integrations under one unified ID to eliminate session conflicts
+  - merged shared modules within a 2-week deadline; publicly recognized by the Team Lead.
+- Established PR review and creation checklists and enforced TypeScript standards across the
+  team (find over filter+[0], unknown over any); built a FastAPI service for automated PDF
+  data extraction using the factory pattern.
+
+Jr. Software Engineer - Test Automation
+Arbisoft - Lahore, Pakistan
+May 2023 - June 2024
+- Built end-to-end automation frameworks in WebdriverIO for web and mobile (Android, iOS)
+  platforms.
+- Designed a framework abstraction wrapper over Cypress so the suite depended on one
+  interface, not the tool - migrated to Playwright by changing only the wrapper; pattern
+  reused across Arbisoft projects, including Appium-to-WebdriverIO moves.
+- Implemented a local Selenium Grid with Appium for parallel execution, cutting regression
+  testing time by 40%.
+- Built a cross-platform framework using the factory pattern to unify Android, iOS, and web
+  configs; solved a dynamic recursive Q&A automation problem (variable depth and branching)
+  with recursive traversal.
+- Mentored teammates on WebdriverIO, Selenium Grid, and parallel execution; ran internal
+  knowledge-sharing sessions and helped onboard the Zuub project's automation infrastructure
+  and quality gates.
+
+Freelance Software Engineer
+Upwork - Remote
+April 2023 - December 2024
+- Delivered multi-framework test automation across Playwright, WebdriverIO, Cypress, and
+  Selenium for a range of client web apps.
+- Set up CI/CD pipelines and designed test architecture from scratch.
+- Built stealth scraping infrastructure with Patchright and anti-detection techniques.
+
+Jr. Software Engineer
+Ginkgo Retail - Lahore, Pakistan
+August 2022 - May 2023
+- Built and maintained responsive React / Django features across the SDLC in an agile team.
+- Developed a Learning Management System end-to-end during the internship phase.
+- Gained early QA grounding - manual testing, bug reporting, and verifying features against
+  acceptance criteria.
+
+
+TECHNICAL SKILLS
+
+Test Automation: Playwright, Cypress, WebdriverIO, Selenium, Selenium Grid, Appium, Puppeteer,
+                 Patchright, PyTest, Page Object Model
+Languages: TypeScript, JavaScript, Python, Java
+CI/CD & Reporting: GitHub Actions, GitLab CI, Jenkins, Git, Docker, Allure Reports, Mocha
+Scraping & Anti-Detection: stealth browser config, fingerprint spoofing, CAPTCHA bypass
+                           (2Captcha), rotating residential proxies
+API & Backend: REST APIs, Postman, Supertest, FastAPI, Node.js, Django
+Patterns: Factory, Wrapper / Abstraction, Page Object Model, Recursive traversal
+
+
+KEY PROJECTS
+
+SwagLabs Automation Framework
+Test automation framework for SauceDemo - 50 automated tests across login, cart, checkout,
+sorting, and performance; dual Selenium + Playwright engines, multi-browser (Chrome / Firefox
+/ Edge), parallel execution via pytest-xdist, Page Object Model with a factory, Allure
+reporting, GitHub Actions CI.
+github.com/M-Hammad-Faisal/Website-Tester
+
+Framework Abstraction Wrapper (Cypress to Playwright)
+Abstraction layer over Cypress enabling a full-suite migration to Playwright via a single-file
+swap. Adopted across multiple Arbisoft projects for framework transitions.
+Cypress, Playwright, TypeScript, Design Patterns
+
+wdio-wait-for
+Open-source library of expected-condition helpers for WebdriverIO - composable, promise-based
+waits for reliable end-to-end tests.
+github.com/M-Hammad-Faisal/wdio-wait-for
+
+Code Mage - QA Automation Content Platform
+Technical content platform for QA and automation engineers; 28+ tutorial chapters across
+Playwright, WebdriverIO, and Cypress. Next.js 15, Supabase, TypeScript.
+code-mage.dev
+
+
+EDUCATION
+
+Bachelor of Engineering - Computer Engineering
+University of Engineering and Technology, Lahore
+October 2019 - May 2023 | GPA 3.60 / 4.0
+
+
+CERTIFICATIONS
+
+Python for Everybody Specialization - University of Michigan / Coursera
+TypeScript Variables and Data Types - LinkedIn Learning
+
+
+ADDITIONAL
+
+Open Source: Contributor to the WebdriverIO repository; author of wdio-wait-for and several
+             automation and developer tools.
+Leadership:  Board of Governor and Director of Graphic Design, ACM UET Lahore (2020-2023).
+Languages:   English (Professional), Urdu (Native), Punjabi (Native).

@@ -1,0 +1,141 @@
+MUHAMMAD HAMMAD FAISAL
+Software Engineer - Automation, Backend & Web Scraping
+
+Email: hammadfaisal178@gmail.com
+Phone: +92 344 4254413
+Location: Lahore, Pakistan
+LinkedIn: linkedin.com/in/m-hammad-faisal
+GitHub: github.com/M-Hammad-Faisal
+
+
+PROFESSIONAL SUMMARY
+
+Software Engineer with 3+ years building production automation systems, backend services, and
+large-scale web-scraping infrastructure in TypeScript, JavaScript, Python, and Node.js.
+Consolidated 23 service integrations under a unified architecture in two weeks, built a
+FastAPI microservice for PDF data extraction, and engineered Patchright-based anti-detection
+systems with CAPTCHA-bypass infrastructure running across thousands of accounts. Refactored a
+100+ file test suite to 60 files and cut its runtime from 8 hours to 2 through parallelization
+and distributed infrastructure. Comfortable across the stack - React/Django apps, real-time
+features, CLI tooling - with strong CI/CD on GitHub Actions, GitLab CI, and Jenkins.
+
+
+PROFESSIONAL EXPERIENCE
+
+Software Engineer
+Arbisoft - Lahore, Pakistan
+June 2024 - Present
+Engineer across two client products - FixAlert (test automation) and Zuub (data pipelines).
+- Consolidated 23 separate payer integrations under a unified bot architecture to eliminate
+  session conflicts - refactored and merged shared modules across all 23 within a 2-week
+  deadline; received public recognition and compensatory leave from the Team Lead.
+- Proposed and architected a FastAPI microservice for PDF data extraction using the factory
+  pattern - chosen over Node.js for Python's parsing ecosystem; adopted across multiple
+  projects.
+- Engineered Zuub's anti-detection engine with Playwright and Patchright - stealth browser
+  configuration, fingerprint spoofing, and CAPTCHA bypass via 2Captcha integration -
+  unblocking multiple critical client sites.
+- Designed a state-based credential-rotation system managing thousands of accounts with zero
+  bans or flags across all scraping targets.
+- Refactored FixAlert's inherited 100+ file WebdriverIO suite to 60 files and cut full-suite
+  runtime from 8 hours to 2 with parallel execution and a distributed Selenium Grid; wired
+  CI/CD via GitHub Actions.
+- Resolved a sequential async-iteration constraint (no loops permitted) with the async
+  library's mapSeries / eachSeries for deterministic multi-step flows.
+- Built an Outline-style VPN client in Python (ShadowSocks) to unblock geo-restricted targets
+  that macOS networking could not reach; standardized TypeScript conventions and PR-review
+  workflows across the team.
+
+Jr. Software Engineer - Test Automation
+Arbisoft - Lahore, Pakistan
+May 2023 - June 2024
+- Designed a framework abstraction layer so the codebase depended on one interface rather than
+  a third-party tool - enabled a full framework migration by rewriting only the adapter;
+  pattern reused across teams, including Appium-to-WebdriverIO transitions.
+- Built a cross-platform automation framework using the factory pattern to unify Android, iOS,
+  and web configuration behind shared logic with platform-specific overrides.
+- Implemented a local Selenium Grid with Appium for parallel execution, cutting regression
+  testing time by 40%.
+- Replaced fragile fixed-loop logic with a recursive traversal algorithm for a variable-depth,
+  branching flow.
+- Collaborated with QA, dev, and product teams on automation strategy and test-coverage
+  planning; helped onboard the Zuub project - established automation infrastructure from the
+  ground up.
+
+Freelance Software Engineer
+Upwork - Remote
+April 2023 - December 2024
+- Built stealth scraping infrastructure with Patchright and custom anti-detection techniques
+  for client data projects.
+- Delivered multi-framework test automation across Playwright, WebdriverIO, Cypress, and
+  Selenium.
+- Set up CI/CD pipelines and designed test architecture from scratch.
+
+Jr. Software Engineer
+Ginkgo Retail - Lahore, Pakistan
+August 2022 - May 2023
+- Built and maintained responsive web applications with React and Django across the full
+  development lifecycle.
+- Developed a Learning Management System end-to-end - React front end, Django back end, and
+  deployment.
+- Contributed to CI/CD pipelines and code-review processes.
+
+
+TECHNICAL SKILLS
+
+Languages: TypeScript, JavaScript, Python, Java, Go, HTML5, CSS3
+Backend & APIs: FastAPI, Node.js, Django, Django Channels, REST APIs, WebSockets, PostgreSQL,
+                Firestore
+Automation & Scraping: Playwright, Patchright, Puppeteer, Selenium, WebdriverIO, Appium,
+                       anti-detection, 2Captcha, rotating proxies
+CI/CD & Cloud: GitHub Actions, GitLab CI, Jenkins, Git, Docker, Vercel, Google Cloud (Cloud
+               Functions, Cloud Run), Supabase
+Patterns & Practices: Factory, Abstraction, State machines, Page Object Model, Agile / Scrum,
+                      code review
+Tools: Jira, Postman, Supertest, Allure Reports, Mocha
+
+
+KEY PROJECTS
+
+Stealth Scraper (Patchright)
+Production-grade stealth scraping library with six anti-detection techniques - fingerprint
+spoofing, stealth headers, human-like delays, proxy rotation, canvas noise, WebGL masking.
+TypeScript, ESLint v9, GitHub Actions CI.
+github.com/M-Hammad-Faisal/stealth-scraper-playwright
+
+Code Mage - QA Automation Content Platform
+Technical content platform for automation engineers; 28+ published tutorial chapters across
+Playwright, WebdriverIO, and Cypress. Built on Next.js 15, Supabase, Vercel, TypeScript,
+Tailwind v4.
+code-mage.dev
+
+ProxyPal
+macOS desktop client for managing ShadowSocks connections, inspired by Outline - multi-server
+management and one-click switching. Python.
+github.com/M-Hammad-Faisal/ProxyPal
+
+JSON Compare Tool
+JSON comparison tool with GitHub-style diff visualization, available as both a CLI and a web
+interface.
+m-hammad-faisal.github.io/json-compare | github.com/M-Hammad-Faisal/json-compare
+
+
+EDUCATION
+
+Bachelor of Engineering - Computer Engineering
+University of Engineering and Technology, Lahore
+October 2019 - May 2023 | GPA 3.60 / 4.0
+
+
+CERTIFICATIONS
+
+Python for Everybody Specialization - University of Michigan / Coursera
+TypeScript Variables and Data Types - LinkedIn Learning
+
+
+ADDITIONAL
+
+Open Source: Contributor to the WebdriverIO repository; author of wdio-wait-for and several
+             automation and developer tools.
+Leadership:  Board of Governor and Director of Graphic Design, ACM UET Lahore (2020-2023).
+Languages:   English (Professional), Urdu (Native), Punjabi (Native).

@@ -855,6 +855,19 @@ body:not([data-theme]) .navbar {
     box-shadow: var(--shadow-glow-orange);
 }
 
+.project-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+    background: rgba(3, 7, 18, 0.75);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
 .project-content {
     padding: var(--space-6);
 }
