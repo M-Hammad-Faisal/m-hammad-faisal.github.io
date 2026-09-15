@@ -32,11 +32,14 @@ Engineer across two client products - FixAlert (test automation) and Zuub (data 
 - Proposed and architected a FastAPI microservice for PDF data extraction using the factory
   pattern - chosen over Node.js for Python's parsing ecosystem; adopted across multiple
   projects.
-- Engineered Zuub's anti-detection engine with Playwright and Patchright - stealth browser
-  configuration, fingerprint spoofing, and CAPTCHA bypass via 2Captcha integration -
-  unblocking multiple critical client sites.
-- Designed a state-based credential-rotation system managing thousands of accounts with zero
-  bans or flags across all scraping targets.
+- Built and maintain Zuub's TypeScript automation bots (Puppeteer, Playwright, Patchright) -
+  full login flows, CAPTCHA handling (reCAPTCHA v2/v3, Amazon) via 2Captcha integration, and
+  extraction/transformation of data into a fixed interface schema - unblocking multiple
+  critical client sites.
+- Own the full credential lifecycle for every bot - validation, password update and reset -
+  via a state-based rotation system managing thousands of accounts with zero bans or
+  lockouts; verify extracted data is complete and correct rather than trusting run success,
+  and fix bots fast when target sites change.
 - Refactored FixAlert's inherited 100+ file WebdriverIO suite to 60 files and cut full-suite
   runtime from 8 hours to 2 with parallel execution and a distributed Selenium Grid; wired
   CI/CD via GitHub Actions.
@@ -87,7 +90,8 @@ Languages: TypeScript, JavaScript, Python, Java, Go, HTML5, CSS3
 Backend & APIs: FastAPI, Node.js, Django, Django Channels, REST APIs, WebSockets, PostgreSQL,
                 Firestore
 Automation & Scraping: Playwright, Patchright, Puppeteer, Selenium, WebdriverIO, Appium,
-                       anti-detection, 2Captcha, rotating proxies
+                       anti-detection, CAPTCHA solving (reCAPTCHA v2/v3, Amazon), rotating
+                       proxies
 CI/CD & Cloud: GitHub Actions, GitLab CI, Jenkins, Git, Docker, Vercel, Google Cloud (Cloud
                Functions, Cloud Run), Supabase
 Patterns & Practices: Factory, Abstraction, State machines, Page Object Model, Agile / Scrum,

@@ -30,12 +30,15 @@ Core automation engineer across two client products - FixAlert (test automation)
 - Refactored FixAlert's inherited 100+ file WebdriverIO suite to 60 files with a cleaner
   page-object architecture, removing large-scale duplication.
 - Implemented parallel execution and a distributed Selenium Grid that cut full-suite runtime
-  from 8 hours to 2 hours with no loss of coverage; integrated CI/CD via GitHub Actions.
-- Built production web-scraping and test-data pipelines for Zuub with Playwright and
-  Patchright - stealth browser configuration, fingerprint spoofing, and CAPTCHA bypass via
-  2Captcha integration.
-- Designed a state-based credential-rotation system for automated flows, cycling thousands of
-  accounts across active runs with zero lockouts.
+  from 8 hours to 2 hours with no loss of coverage; integrated CI/CD via GitHub Actions,
+  gating merges on test results and removing skipped and trivially-passing tests.
+- Build and maintain TypeScript automation bots for Zuub (Puppeteer, Playwright, Patchright) -
+  full login flows, CAPTCHA handling (reCAPTCHA v2/v3, Amazon), and extraction/transformation
+  of data into a fixed interface schema; verify output is complete and correct, not just that
+  the run succeeded.
+- Own the credential lifecycle for every bot - validation, password update and reset - via a
+  state-based rotation system cycling thousands of accounts across active runs with zero
+  lockouts.
 - Consolidated 23 automation integrations under one unified ID to eliminate session conflicts
   - merged shared modules within a 2-week deadline; publicly recognized by the Team Lead.
 - Established PR review and creation checklists and enforced TypeScript standards across the
@@ -82,8 +85,8 @@ Test Automation: Playwright, Cypress, WebdriverIO, Selenium, Selenium Grid, Appi
                  Patchright, PyTest, Page Object Model
 Languages: TypeScript, JavaScript, Python, Java
 CI/CD & Reporting: GitHub Actions, GitLab CI, Jenkins, Git, Docker, Allure Reports, Mocha
-Scraping & Anti-Detection: stealth browser config, fingerprint spoofing, CAPTCHA bypass
-                           (2Captcha), rotating residential proxies
+Scraping & Anti-Detection: stealth browser config, fingerprint spoofing, CAPTCHA handling
+                           (reCAPTCHA v2/v3, Amazon), rotating residential proxies
 API & Backend: REST APIs, Postman, Supertest, FastAPI, Node.js, Django
 Patterns: Factory, Wrapper / Abstraction, Page Object Model, Recursive traversal
 

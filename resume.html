@@ -204,17 +204,17 @@
             <ul class="job-achievements" data-variant-content="swe">
                 <li>Consolidated 23 separate payer integrations under a unified bot architecture to eliminate session conflicts — refactored and merged shared modules across all 23 within a 2-week deadline; received public recognition and compensatory leave from the Team Lead.</li>
                 <li>Proposed and architected a FastAPI microservice for PDF data extraction using the factory pattern — chosen over Node.js for Python's parsing ecosystem; adopted across multiple projects.</li>
-                <li>Engineered Zuub's anti-detection engine with Playwright and Patchright — stealth browser configuration, fingerprint spoofing, and CAPTCHA bypass via 2Captcha integration — unblocking multiple critical client sites.</li>
-                <li>Designed a state-based credential-rotation system managing thousands of accounts with zero bans or flags across all scraping targets.</li>
+                <li>Built and maintain Zuub's TypeScript automation bots (Puppeteer, Playwright, Patchright) — full login flows, CAPTCHA handling (reCAPTCHA v2/v3, Amazon) via 2Captcha integration, and extraction/transformation of data into a fixed interface schema — unblocking multiple critical client sites.</li>
+                <li>Own the full credential lifecycle for every bot — validation, password update and reset — via a state-based rotation system managing thousands of accounts with zero bans or lockouts; verify extracted data is complete and correct rather than trusting run success, and fix bots fast when target sites change.</li>
                 <li>Refactored FixAlert's inherited 100+ file WebdriverIO suite to 60 files and cut full-suite runtime from 8 hours to 2 with parallel execution and a distributed Selenium Grid; wired CI/CD via GitHub Actions.</li>
                 <li>Resolved a sequential async-iteration constraint (no loops permitted) with the async library's mapSeries / eachSeries for deterministic multi-step flows.</li>
                 <li>Built an Outline-style VPN client in Python (ShadowSocks) to unblock geo-restricted targets that macOS networking could not reach; standardized TypeScript conventions and PR-review workflows across the team.</li>
             </ul>
             <ul class="job-achievements" data-variant-content="qa">
                 <li>Refactored FixAlert's inherited 100+ file WebdriverIO suite to 60 files with a cleaner page-object architecture, removing large-scale duplication.</li>
-                <li>Implemented parallel execution and a distributed Selenium Grid that cut full-suite runtime from 8 hours to 2 hours with no loss of coverage; integrated CI/CD via GitHub Actions.</li>
-                <li>Built production web-scraping and test-data pipelines for Zuub with Playwright and Patchright — stealth browser configuration, fingerprint spoofing, and CAPTCHA bypass via 2Captcha integration.</li>
-                <li>Designed a state-based credential-rotation system for automated flows, cycling thousands of accounts across active runs with zero lockouts.</li>
+                <li>Implemented parallel execution and a distributed Selenium Grid that cut full-suite runtime from 8 hours to 2 hours with no loss of coverage; integrated CI/CD via GitHub Actions, gating merges on test results and removing skipped and trivially-passing tests.</li>
+                <li>Build and maintain TypeScript automation bots for Zuub (Puppeteer, Playwright, Patchright) — full login flows, CAPTCHA handling (reCAPTCHA v2/v3, Amazon), and extraction/transformation of data into a fixed interface schema; verify output is complete and correct, not just that the run succeeded.</li>
+                <li>Own the credential lifecycle for every bot — validation, password update and reset — via a state-based rotation system cycling thousands of accounts across active runs with zero lockouts.</li>
                 <li>Consolidated 23 automation integrations under one unified ID to eliminate session conflicts — merged shared modules within a 2-week deadline; publicly recognized by the Team Lead.</li>
                 <li>Established PR review and creation checklists and enforced TypeScript standards across the team (find over filter+[0], unknown over any); built a FastAPI service for automated PDF data extraction using the factory pattern.</li>
             </ul>
@@ -299,7 +299,7 @@
         <div data-variant-content="swe">
             <p class="skill-row"><span class="k">Languages:</span> TypeScript, JavaScript, Python, Java, Go, HTML5, CSS3</p>
             <p class="skill-row"><span class="k">Backend &amp; APIs:</span> FastAPI, Node.js, Django, Django Channels, REST APIs, WebSockets, PostgreSQL, Firestore</p>
-            <p class="skill-row"><span class="k">Automation &amp; Scraping:</span> Playwright, Patchright, Puppeteer, Selenium, WebdriverIO, Appium, anti-detection, 2Captcha, rotating proxies</p>
+            <p class="skill-row"><span class="k">Automation &amp; Scraping:</span> Playwright, Patchright, Puppeteer, Selenium, WebdriverIO, Appium, anti-detection, CAPTCHA solving (reCAPTCHA v2/v3, Amazon), rotating proxies</p>
             <p class="skill-row"><span class="k">CI/CD &amp; Cloud:</span> GitHub Actions, GitLab CI, Jenkins, Git, Docker, Vercel, Google Cloud (Cloud Functions, Cloud Run), Supabase</p>
             <p class="skill-row"><span class="k">Patterns &amp; Practices:</span> Factory, Abstraction, State machines, Page Object Model, Agile / Scrum, code review</p>
             <p class="skill-row"><span class="k">Tools:</span> Jira, Postman, Supertest, Allure Reports, Mocha</p>
@@ -309,7 +309,7 @@
             <p class="skill-row"><span class="k">Test Automation:</span> Playwright, Cypress, WebdriverIO, Selenium, Selenium Grid, Appium, Puppeteer, Patchright, PyTest, Page Object Model</p>
             <p class="skill-row"><span class="k">Languages:</span> TypeScript, JavaScript, Python, Java</p>
             <p class="skill-row"><span class="k">CI/CD &amp; Reporting:</span> GitHub Actions, GitLab CI, Jenkins, Git, Docker, Allure Reports, Mocha</p>
-            <p class="skill-row"><span class="k">Scraping &amp; Anti-Detection:</span> stealth browser config, fingerprint spoofing, CAPTCHA bypass (2Captcha), rotating residential proxies</p>
+            <p class="skill-row"><span class="k">Scraping &amp; Anti-Detection:</span> stealth browser config, fingerprint spoofing, CAPTCHA handling (reCAPTCHA v2/v3, Amazon), rotating residential proxies</p>
             <p class="skill-row"><span class="k">API &amp; Backend:</span> REST APIs, Postman, Supertest, FastAPI, Node.js, Django</p>
             <p class="skill-row"><span class="k">Patterns:</span> Factory, Wrapper / Abstraction, Page Object Model, Recursive traversal</p>
         </div>
