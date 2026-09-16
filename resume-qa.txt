@@ -105,10 +105,10 @@ Abstraction layer over Cypress enabling a full-suite migration to Playwright via
 swap. Adopted across multiple Arbisoft projects for framework transitions.
 Cypress, Playwright, TypeScript, Design Patterns
 
-wdio-wait-for
-Open-source library of expected-condition helpers for WebdriverIO - composable, promise-based
-waits for reliable end-to-end tests.
-github.com/M-Hammad-Faisal/wdio-wait-for
+WebdriverIO Open Source Contributions
+7 merged PRs across webdriverio/webdriverio, wdio-wait-for, and example-recipes - a
+spec-reporter feature, the file-download Best Practices docs page, and several other fixes.
+github.com/pulls?q=is%3Apr+author%3AM-Hammad-Faisal+org%3Awebdriverio+is%3Amerged
 
 Code Mage - QA Automation Content Platform
 Technical content platform for QA and automation engineers; 28+ tutorial chapters across
@@ -131,7 +131,8 @@ TypeScript Variables and Data Types - LinkedIn Learning
 
 ADDITIONAL
 
-Open Source: Contributor to the WebdriverIO repository; author of wdio-wait-for and several
-             automation and developer tools.
+Open Source: 7 merged PRs across the WebdriverIO org (webdriverio/webdriverio,
+             wdio-wait-for, example-recipes), including a spec-reporter feature and the
+             file-download Best Practices docs page; author of several other automation tools.
 Leadership:  Board of Governor and Director of Graphic Design, ACM UET Lahore (2020-2023).
 Languages:   English (Professional), Urdu (Native), Punjabi (Native).

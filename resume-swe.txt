@@ -139,7 +139,8 @@ TypeScript Variables and Data Types - LinkedIn Learning
 
 ADDITIONAL
 
-Open Source: Contributor to the WebdriverIO repository; author of wdio-wait-for and several
-             automation and developer tools.
+Open Source: 7 merged PRs across the WebdriverIO org (webdriverio/webdriverio,
+             wdio-wait-for, example-recipes), including a spec-reporter feature and the
+             file-download Best Practices docs page; author of several other automation tools.
 Leadership:  Board of Governor and Director of Graphic Design, ACM UET Lahore (2020-2023).
 Languages:   English (Professional), Urdu (Native), Punjabi (Native).
