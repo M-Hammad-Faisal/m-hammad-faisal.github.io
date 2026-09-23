@@ -93,13 +93,12 @@
         .toolbar-btn { padding: 9px 14px; background: var(--primary-color); color: #fff; border: none; border-radius: 6px; font-size: 12.5px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; font-family: inherit; }
         .toolbar-btn.ghost { background: #eef2f7; color: var(--text-primary); }
         .toolbar-btn:hover { filter: brightness(0.96); }
-        .variant-hint { max-width: 8.5in; margin: 0 auto 4px; padding: 0 0.75in; font-size: 12px; color: var(--secondary-color); }
 
         @page { size: A4; margin: 0.5in 0.55in; }
         @media print {
             body { font-size: 10.5px; line-height: 1.4; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .resume-container { box-shadow: none; margin: 0; padding: 0; max-width: 100%; }
-            .toolbar, .variant-hint { display: none !important; }
+            .toolbar { display: none !important; }
 
             .resume-header { margin-bottom: 10px; padding-bottom: 8px; }
             .resume-name { font-size: 19px; margin-bottom: 3px; }
@@ -129,7 +128,6 @@
             .experience-header { flex-direction: column; }
             .skills-table th { white-space: normal; }
             .toolbar { position: static; margin: 12px; flex-wrap: wrap; justify-content: center; backdrop-filter: none; }
-            .variant-hint { padding: 0 22px; }
         }
     </style>
 </head>
@@ -145,9 +143,6 @@
     <button class="toolbar-btn ghost" onclick="window.print()" title="Print or save a custom PDF from the current view"><i class="fas fa-print"></i></button>
 </div>
 
-<p class="variant-hint">
-    Showing the <strong><span data-variant-label></span></strong> version — switch it top-right, then <strong>Export PDF</strong>.
-</p>
 
 <div class="resume-container">
 
@@ -404,7 +399,6 @@
         swe: 'Muhammad Hammad Faisal - Software Engineer Resume',
         qa:  'Muhammad Hammad Faisal - QA Automation Engineer Resume'
     };
-    var LABELS = { swe: 'Software Engineer', qa: 'QA Automation Engineer / SDET' };
     var PDF_FILES = {
         swe: { href: 'assets/resume-swe.pdf', name: 'Muhammad-Hammad-Faisal-Software-Engineer-Resume.pdf' },
         qa:  { href: 'assets/resume-qa.pdf',  name: 'Muhammad-Hammad-Faisal-QA-Automation-Resume.pdf' }
@@ -426,7 +420,6 @@
             b.classList.toggle('active', on);
             b.setAttribute('aria-selected', on ? 'true' : 'false');
         });
-        document.querySelectorAll('[data-variant-label]').forEach(function (el) { el.textContent = LABELS[v]; });
         document.title = VARIANTS[v];
         try { localStorage.setItem('resumeVariant', v); } catch (e) {}
         var url = new URL(window.location.href);
