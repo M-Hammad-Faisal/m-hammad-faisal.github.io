@@ -140,8 +140,9 @@
         <button type="button" data-variant="swe" role="tab">Software Engineer</button>
         <button type="button" data-variant="qa" role="tab">QA Automation / SDET</button>
     </div>
-    <button class="toolbar-btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Export PDF</button>
+    <a class="toolbar-btn" id="exportPdfBtn" href="assets/resume-qa.pdf" download="Muhammad-Hammad-Faisal-QA-Automation-Resume.pdf"><i class="fas fa-file-pdf"></i> Download PDF</a>
     <button class="toolbar-btn ghost" onclick="copyResumeText()"><i class="fas fa-copy"></i> Copy Text</button>
+    <button class="toolbar-btn ghost" onclick="window.print()" title="Print or save a custom PDF from the current view"><i class="fas fa-print"></i></button>
 </div>
 
 <p class="variant-hint">
@@ -404,10 +405,19 @@
         qa:  'Muhammad Hammad Faisal - QA Automation Engineer Resume'
     };
     var LABELS = { swe: 'Software Engineer', qa: 'QA Automation Engineer / SDET' };
+    var PDF_FILES = {
+        swe: { href: 'assets/resume-swe.pdf', name: 'Muhammad-Hammad-Faisal-Software-Engineer-Resume.pdf' },
+        qa:  { href: 'assets/resume-qa.pdf',  name: 'Muhammad-Hammad-Faisal-QA-Automation-Resume.pdf' }
+    };
 
     function applyVariant(v) {
         if (v !== 'swe' && v !== 'qa') v = 'qa';
         document.body.setAttribute('data-resume', v);
+        var pdfBtn = document.getElementById('exportPdfBtn');
+        if (pdfBtn) {
+            pdfBtn.href = PDF_FILES[v].href;
+            pdfBtn.setAttribute('download', PDF_FILES[v].name);
+        }
         document.querySelectorAll('[data-variant-content]').forEach(function (el) {
             el.hidden = el.getAttribute('data-variant-content').split(/\s+/).indexOf(v) === -1;
         });
