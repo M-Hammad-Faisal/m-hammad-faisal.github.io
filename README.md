@@ -140,12 +140,11 @@ open index.html
 ```
 portfolio/
 ├── index.html          # Main portfolio page
-├── resume.html         # HTML resume — Software Engineer / QA Automation switch + Export PDF
+├── resume.html         # HTML resume — Software Engineer + Download PDF
 ├── resume-swe.txt      # Plain text resume — Software Engineer version
-├── resume-qa.txt       # Plain text resume — QA Automation Engineer / SDET version
 ├── thank-you.html      # Contact form success page
 ├── scripts/
-│   └── build-resume-pdf.sh  # Regenerate assets/resume-*.pdf from resume.html (run after edits)
+│   └── build-resume-pdf.sh  # Regenerate assets/resume-swe.pdf from resume.html (run after edits)
 ├── css/
 │   └── styles.css      # Modern Navy+Teal styling
 ├── js/
@@ -156,7 +155,7 @@ portfolio/
 │   ├── favicon.ico     # Site icon
 │   ├── logo.png        # Brand logo
 │   ├── resume-swe.pdf  # Generated — Software Engineer CV
-│   ├── resume-qa.pdf   # Generated — QA Automation CV
+│   ├── resume-python.pdf # Python-first Software Engineer CV
 │   └── *.png           # Project screenshots
 └── README.md           # Documentation
 ```
@@ -166,7 +165,7 @@ portfolio/
 2. **Styling**: Customize colors and spacing in `css/styles.css`
 3. **Add Projects**: Include new project cards in the projects section
 4. **Assets**: Replace images in the `assets/` directory
-5. **Resume**: Update `resume.html` (both variants live in one file, toggled by `data-variant-content`) and the `resume-*.txt` files
+5. **Resume**: Update `resume.html` and `resume-swe.txt`, then run `scripts/build-resume-pdf.sh`
 6. **Contact**: Update contact information and social links
 
 ## 📈 SEO & Analytics

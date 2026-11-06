@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Hammad Faisal - Resume</title>
+    <title>Muhammad Hammad Faisal - Software Engineer Resume</title>
 
-    <meta name="description" content="Muhammad Hammad Faisal - Resume. Two ATS-friendly versions: Software Engineer (automation, web extraction, reliability) and QA Automation Engineer / SDET (test framework architecture).">
-    <meta name="keywords" content="Software Engineer, QA Automation Engineer, SDET, Test Automation, Playwright, Patchright, WebdriverIO, Selenium, Selenium Grid, Appium, Cypress, TypeScript, Python, Node.js, FastAPI, CI/CD, GitHub Actions, Web Scraping, Anti-Detection">
+    <meta name="description" content="Muhammad Hammad Faisal - Resume. ATS-friendly resume: Software Engineer (automation, web extraction, reliability).">
+    <meta name="keywords" content="Software Engineer, Test Automation, Automation Engineer, Playwright, Patchright, WebdriverIO, Selenium, Selenium Grid, Appium, Cypress, TypeScript, Python, Node.js, FastAPI, CI/CD, GitHub Actions, Web Scraping, Anti-Detection">
     <meta name="author" content="Muhammad Hammad Faisal">
 
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
@@ -83,13 +83,6 @@
             background: rgba(255,255,255,0.92); backdrop-filter: blur(6px);
             padding: 8px; border-radius: 10px; box-shadow: 0 4px 16px rgba(15,23,42,0.18);
         }
-        .variant-switch { display: flex; background: #e2e8f0; border-radius: 7px; padding: 3px; gap: 3px; }
-        .variant-switch button {
-            border: none; background: transparent; padding: 7px 12px; font-size: 12px; font-weight: 600;
-            border-radius: 5px; cursor: pointer; color: var(--text-secondary); font-family: inherit; white-space: nowrap;
-            transition: background 0.15s ease, color 0.15s ease;
-        }
-        .variant-switch button.active { background: var(--primary-color); color: #fff; }
         .toolbar-btn { padding: 9px 14px; background: var(--primary-color); color: #fff; border: none; border-radius: 6px; font-size: 12.5px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; font-family: inherit; }
         .toolbar-btn.ghost { background: #eef2f7; color: var(--text-primary); }
         .toolbar-btn:hover { filter: brightness(0.96); }
@@ -134,10 +127,6 @@
 <body>
 
 <div class="toolbar">
-    <div class="variant-switch" role="tablist" aria-label="Resume version">
-        <button type="button" data-variant="swe" role="tab">Software Engineer</button>
-        <button type="button" data-variant="qa" role="tab">QA Automation / SDET</button>
-    </div>
     <a class="toolbar-btn" id="exportPdfBtn" href="assets/resume-swe.pdf" download="Muhammad-Hammad-Faisal-Software-Engineer-Resume.pdf"><i class="fas fa-file-pdf"></i> Download PDF</a>
     <button class="toolbar-btn ghost" onclick="copyResumeText()"><i class="fas fa-copy"></i> Copy Text</button>
     <button class="toolbar-btn ghost" onclick="window.print()" title="Print or save a custom PDF from the current view"><i class="fas fa-print"></i></button>
@@ -148,8 +137,7 @@
 
     <header class="resume-header">
         <h1 class="resume-name">Muhammad Hammad Faisal</h1>
-        <p class="resume-title" data-variant-content="swe">Software Engineer — Automation, Web Extraction &amp; Reliability</p>
-        <p class="resume-title" data-variant-content="qa">QA Automation Engineer (SDET) — Playwright · WebdriverIO · Selenium · Appium</p>
+        <p class="resume-title">Software Engineer — Automation, Web Extraction &amp; Reliability</p>
         <div class="resume-contact">
             <span><a href="mailto:hammadfaisal178@gmail.com">hammadfaisal178@gmail.com</a></span><span class="sep">|</span>
             <span>+92 344 4254413</span><span class="sep">|</span>
@@ -162,7 +150,7 @@
     <!-- SUMMARY -->
     <section class="resume-section">
         <h2 class="section-title">Professional Summary</h2>
-        <p class="summary-text" data-variant-content="swe">
+        <p class="summary-text">
             Software Engineer with 3+ years building production automation systems, backend services, and large-scale
             web-scraping infrastructure in TypeScript, JavaScript, Python, and Node.js. Consolidated 23 service
             integrations under a unified architecture in two weeks, built a FastAPI microservice for PDF data extraction,
@@ -170,15 +158,6 @@
             thousands of accounts. Refactored a 100+ file test suite to 60 files and cut its runtime from 8 hours to 2
             through parallelization and distributed infrastructure. Comfortable across the stack — React/Django apps,
             real-time features, CLI tooling — with strong CI/CD on GitHub Actions, GitLab CI, and Jenkins.
-        </p>
-        <p class="summary-text" data-variant-content="qa">
-            QA Automation Engineer / SDET with 3+ years building and scaling test automation frameworks for web, mobile,
-            and data-intensive applications. Expert across Playwright, Cypress, WebdriverIO, Selenium, and Appium in
-            TypeScript, JavaScript, and Python. Cut a 100+ file WebdriverIO suite to 60 files and its runtime from
-            8 hours to 2 with parallel execution and a distributed Selenium Grid; reduced regression time 40% on an
-            earlier engagement. Designed framework abstraction layers that make tool migrations a single-file change and
-            unified Android / iOS / web suites behind one factory-driven configuration. Strong on CI/CD (GitHub Actions,
-            GitLab CI, Jenkins), Allure reporting, and Page Object Model.
         </p>
     </section>
 
@@ -197,7 +176,7 @@
                 <span class="job-meta">Lahore, Pakistan</span>
             </div>
             <p class="job-context">Core automation engineer across two client products — FixAlert (test automation) and Zuub (data pipelines).</p>
-            <ul class="job-achievements" data-variant-content="swe">
+            <ul class="job-achievements">
                 <li>Consolidated 23 separate payer integrations under a unified bot architecture to eliminate session conflicts — refactored and merged shared modules across all 23 within a 2-week deadline; received public recognition and compensatory leave from the Team Lead.</li>
                 <li>Proposed and architected a FastAPI microservice for PDF data extraction using the factory pattern — chosen over Node.js for Python's parsing ecosystem; adopted across multiple projects.</li>
                 <li>Built and maintain Zuub's TypeScript automation bots (Puppeteer, Playwright, Patchright) — full login flows, CAPTCHA handling (reCAPTCHA v2/v3, Amazon) via 2Captcha integration, and extraction/transformation of data into a fixed interface schema — unblocking multiple critical client sites.</li>
@@ -205,14 +184,6 @@
                 <li>Refactored FixAlert's inherited 100+ file WebdriverIO suite to 60 files and cut full-suite runtime from 8 hours to 2 with parallel execution and a distributed Selenium Grid; wired CI/CD via GitHub Actions.</li>
                 <li>Resolved a sequential async-iteration constraint (no loops permitted) with the async library's mapSeries / eachSeries for deterministic multi-step flows.</li>
                 <li>Built an Outline-style VPN client in Python (ShadowSocks) to unblock geo-restricted targets that macOS networking could not reach; standardized TypeScript conventions and PR-review workflows across the team.</li>
-            </ul>
-            <ul class="job-achievements" data-variant-content="qa">
-                <li>Refactored FixAlert's inherited 100+ file WebdriverIO suite to 60 files with a cleaner page-object architecture, removing large-scale duplication.</li>
-                <li>Implemented parallel execution and a distributed Selenium Grid that cut full-suite runtime from 8 hours to 2 hours with no loss of coverage; integrated CI/CD via GitHub Actions, gating merges on test results and removing skipped and trivially-passing tests.</li>
-                <li>Build and maintain TypeScript automation bots for Zuub (Puppeteer, Playwright, Patchright) — full login flows, CAPTCHA handling (reCAPTCHA v2/v3, Amazon), and extraction/transformation of data into a fixed interface schema; verify output is complete and correct, not just that the run succeeded.</li>
-                <li>Own the credential lifecycle for every bot — validation, password update and reset — via a state-based rotation system cycling thousands of accounts across active runs with zero lockouts.</li>
-                <li>Consolidated 23 automation integrations under one unified ID to eliminate session conflicts — merged shared modules within a 2-week deadline; publicly recognized by the Team Lead.</li>
-                <li>Established PR review and creation checklists and enforced TypeScript standards across the team (find over filter+[0], unknown over any); built a FastAPI service for automated PDF data extraction using the factory pattern.</li>
             </ul>
         </div>
 
@@ -226,19 +197,12 @@
                 <span class="job-org">Arbisoft</span>
                 <span class="job-meta">Lahore, Pakistan</span>
             </div>
-            <ul class="job-achievements" data-variant-content="swe">
+            <ul class="job-achievements">
                 <li>Designed a framework abstraction layer so the codebase depended on one interface rather than a third-party tool — enabled a full framework migration by rewriting only the adapter; pattern reused across teams, including Appium → WebdriverIO transitions.</li>
                 <li>Built a cross-platform automation framework using the factory pattern to unify Android, iOS, and web configuration behind shared logic with platform-specific overrides.</li>
                 <li>Implemented a local Selenium Grid with Appium for parallel execution, cutting regression testing time by 40%.</li>
                 <li>Replaced fragile fixed-loop logic with a recursive traversal algorithm for a variable-depth, branching flow.</li>
-                <li>Collaborated with QA, dev, and product teams on automation strategy and test-coverage planning; helped onboard the Zuub project — established automation infrastructure from the ground up.</li>
-            </ul>
-            <ul class="job-achievements" data-variant-content="qa">
-                <li>Built end-to-end automation frameworks in WebdriverIO for web and mobile (Android, iOS) platforms.</li>
-                <li>Designed a framework abstraction wrapper over Cypress so the suite depended on one interface, not the tool — migrated to Playwright by changing only the wrapper; pattern reused across Arbisoft projects, including Appium → WebdriverIO moves.</li>
-                <li>Implemented a local Selenium Grid with Appium for parallel execution, cutting regression testing time by 40%.</li>
-                <li>Built a cross-platform framework using the factory pattern to unify Android, iOS, and web configs; solved a dynamic recursive Q&amp;A automation problem (variable depth and branching) with recursive traversal.</li>
-                <li>Mentored teammates on WebdriverIO, Selenium Grid, and parallel execution; ran internal knowledge-sharing sessions and helped onboard the Zuub project's automation infrastructure and quality gates.</li>
+                <li>Collaborated with engineering and product teams on automation strategy and test-coverage planning; helped onboard the Zuub project — established automation infrastructure from the ground up.</li>
             </ul>
         </div>
 
@@ -252,15 +216,10 @@
                 <span class="job-org">Upwork</span>
                 <span class="job-meta">Remote</span>
             </div>
-            <ul class="job-achievements" data-variant-content="swe">
+            <ul class="job-achievements">
                 <li>Built stealth scraping infrastructure with Patchright and custom anti-detection techniques for client data projects.</li>
                 <li>Delivered multi-framework test automation across Playwright, WebdriverIO, Cypress, and Selenium.</li>
                 <li>Set up CI/CD pipelines and designed test architecture from scratch.</li>
-            </ul>
-            <ul class="job-achievements" data-variant-content="qa">
-                <li>Delivered multi-framework test automation across Playwright, WebdriverIO, Cypress, and Selenium for a range of client web apps.</li>
-                <li>Set up CI/CD pipelines and designed test architecture from scratch.</li>
-                <li>Built stealth scraping infrastructure with Patchright and anti-detection techniques.</li>
             </ul>
         </div>
 
@@ -274,15 +233,10 @@
                 <span class="job-org">Ginkgo Retail</span>
                 <span class="job-meta">Lahore, Pakistan</span>
             </div>
-            <ul class="job-achievements" data-variant-content="swe">
+            <ul class="job-achievements">
                 <li>Built and maintained responsive web applications with React and Django across the full development lifecycle.</li>
                 <li>Developed a Learning Management System end-to-end — React front end, Django back end, and deployment.</li>
                 <li>Contributed to CI/CD pipelines and code-review processes.</li>
-            </ul>
-            <ul class="job-achievements" data-variant-content="qa">
-                <li>Built and maintained responsive React / Django features across the SDLC in an agile team.</li>
-                <li>Developed a Learning Management System end-to-end during the internship phase.</li>
-                <li>Gained early QA grounding — manual testing, bug reporting, and verifying features against acceptance criteria.</li>
             </ul>
         </div>
 
@@ -292,7 +246,7 @@
     <section class="resume-section">
         <h2 class="section-title">Technical Skills</h2>
 
-        <div data-variant-content="swe">
+        <div>
             <p class="skill-row"><span class="k">Languages:</span> TypeScript, JavaScript, Python, Java, Go, HTML5, CSS3</p>
             <p class="skill-row"><span class="k">Backend &amp; APIs:</span> FastAPI, Node.js, Django, Django Channels, REST APIs, WebSockets, PostgreSQL, Firestore</p>
             <p class="skill-row"><span class="k">Automation &amp; Scraping:</span> Playwright, Patchright, Puppeteer, Selenium, WebdriverIO, Appium, anti-detection, CAPTCHA solving (reCAPTCHA v2/v3, Amazon), rotating proxies</p>
@@ -301,28 +255,20 @@
             <p class="skill-row"><span class="k">Tools:</span> Jira, Postman, Supertest, Allure Reports, Mocha</p>
         </div>
 
-        <div data-variant-content="qa">
-            <p class="skill-row"><span class="k">Test Automation:</span> Playwright, Cypress, WebdriverIO, Selenium, Selenium Grid, Appium, Puppeteer, Patchright, PyTest, Page Object Model</p>
-            <p class="skill-row"><span class="k">Languages:</span> TypeScript, JavaScript, Python, Java</p>
-            <p class="skill-row"><span class="k">CI/CD &amp; Reporting:</span> GitHub Actions, GitLab CI, Jenkins, Git, Docker, Allure Reports, Mocha</p>
-            <p class="skill-row"><span class="k">Scraping &amp; Anti-Detection:</span> stealth browser config, fingerprint spoofing, CAPTCHA handling (reCAPTCHA v2/v3, Amazon), rotating residential proxies</p>
-            <p class="skill-row"><span class="k">API &amp; Backend:</span> REST APIs, Postman, Supertest, FastAPI, Node.js, Django</p>
-            <p class="skill-row"><span class="k">Patterns:</span> Factory, Wrapper / Abstraction, Page Object Model, Recursive traversal</p>
-        </div>
     </section>
 
     <!-- PROJECTS -->
     <section class="resume-section">
         <h2 class="section-title">Key Projects</h2>
 
-        <div data-variant-content="swe">
+        <div>
             <div class="project-item">
                 <div class="project-title">Stealth Scraper (Patchright)</div>
                 <p class="project-desc">Production-grade stealth scraping library with six anti-detection techniques — fingerprint spoofing, stealth headers, human-like delays, proxy rotation, canvas noise, WebGL masking. TypeScript, ESLint v9, GitHub Actions CI.</p>
                 <p class="project-meta"><a href="https://github.com/M-Hammad-Faisal/stealth-scraper-playwright">github.com/M-Hammad-Faisal/stealth-scraper-playwright</a></p>
             </div>
             <div class="project-item">
-                <div class="project-title">Code Mage — QA Automation Content Platform</div>
+                <div class="project-title">Code Mage — Automation Content Platform</div>
                 <p class="project-desc">Technical content platform for automation engineers; 28+ published tutorial chapters across Playwright, WebdriverIO, and Cypress. Built on Next.js 15, Supabase, Vercel, TypeScript, Tailwind v4.</p>
                 <p class="project-meta"><a href="https://code-mage.dev">code-mage.dev</a></p>
             </div>
@@ -338,28 +284,6 @@
             </div>
         </div>
 
-        <div data-variant-content="qa">
-            <div class="project-item">
-                <div class="project-title">SwagLabs Automation Framework</div>
-                <p class="project-desc">Test automation framework for SauceDemo — 50 automated tests across login, cart, checkout, sorting, and performance; dual Selenium + Playwright engines, multi-browser (Chrome / Firefox / Edge), parallel execution via pytest-xdist, Page Object Model with a factory, Allure reporting, GitHub Actions CI.</p>
-                <p class="project-meta"><a href="https://github.com/M-Hammad-Faisal/Website-Tester">github.com/M-Hammad-Faisal/Website-Tester</a></p>
-            </div>
-            <div class="project-item">
-                <div class="project-title">Framework Abstraction Wrapper (Cypress → Playwright)</div>
-                <p class="project-desc">Abstraction layer over Cypress enabling a full-suite migration to Playwright via a single-file swap. Adopted across multiple Arbisoft projects for framework transitions.</p>
-                <p class="project-meta">Cypress, Playwright, TypeScript, Design Patterns</p>
-            </div>
-            <div class="project-item">
-                <div class="project-title">WebdriverIO Open Source Contributions</div>
-                <p class="project-desc">7 merged PRs across webdriverio/webdriverio, wdio-wait-for, and example-recipes — a spec-reporter feature, the file-download Best Practices docs page, and several other fixes.</p>
-                <p class="project-meta"><a href="https://github.com/pulls?q=is%3Apr+author%3AM-Hammad-Faisal+org%3Awebdriverio+is%3Amerged">github.com/pulls?q=author:M-Hammad-Faisal+org:webdriverio</a></p>
-            </div>
-            <div class="project-item">
-                <div class="project-title">Code Mage — QA Automation Content Platform</div>
-                <p class="project-desc">Technical content platform for QA and automation engineers; 28+ tutorial chapters across Playwright, WebdriverIO, and Cypress. Next.js 15, Supabase, TypeScript.</p>
-                <p class="project-meta"><a href="https://code-mage.dev">code-mage.dev</a></p>
-            </div>
-        </div>
 
     </section>
 
@@ -395,47 +319,6 @@
 </div>
 
 <script>
-    var VARIANTS = {
-        swe: 'Muhammad Hammad Faisal - Software Engineer Resume',
-        qa:  'Muhammad Hammad Faisal - QA Automation Engineer Resume'
-    };
-    var PDF_FILES = {
-        swe: { href: 'assets/resume-swe.pdf', name: 'Muhammad-Hammad-Faisal-Software-Engineer-Resume.pdf' },
-        qa:  { href: 'assets/resume-qa.pdf',  name: 'Muhammad-Hammad-Faisal-QA-Automation-Resume.pdf' }
-    };
-
-    function applyVariant(v) {
-        if (v !== 'swe' && v !== 'qa') v = 'swe';
-        document.body.setAttribute('data-resume', v);
-        var pdfBtn = document.getElementById('exportPdfBtn');
-        if (pdfBtn) {
-            pdfBtn.href = PDF_FILES[v].href;
-            pdfBtn.setAttribute('download', PDF_FILES[v].name);
-        }
-        document.querySelectorAll('[data-variant-content]').forEach(function (el) {
-            el.hidden = el.getAttribute('data-variant-content').split(/\s+/).indexOf(v) === -1;
-        });
-        document.querySelectorAll('.variant-switch button').forEach(function (b) {
-            var on = b.getAttribute('data-variant') === v;
-            b.classList.toggle('active', on);
-            b.setAttribute('aria-selected', on ? 'true' : 'false');
-        });
-        document.title = VARIANTS[v];
-        try { localStorage.setItem('resumeVariant', v); } catch (e) {}
-        var url = new URL(window.location.href);
-        url.searchParams.set('v', v);
-        history.replaceState(null, '', url);
-    }
-
-    (function init() {
-        var v = new URLSearchParams(window.location.search).get('v');
-        if (v !== 'swe' && v !== 'qa') { try { v = localStorage.getItem('resumeVariant'); } catch (e) {} }
-        applyVariant(v === 'swe' || v === 'qa' ? v : 'swe');
-        document.querySelectorAll('.variant-switch button').forEach(function (b) {
-            b.addEventListener('click', function () { applyVariant(b.getAttribute('data-variant')); });
-        });
-    })();
-
     function copyResumeText() {
         var text = document.querySelector('.resume-container').innerText.replace(/\n{3,}/g, '\n\n').trim();
         if (navigator.clipboard && window.isSecureContext) {

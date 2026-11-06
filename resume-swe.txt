@@ -61,7 +61,7 @@ May 2023 - June 2024
   testing time by 40%.
 - Replaced fragile fixed-loop logic with a recursive traversal algorithm for a variable-depth,
   branching flow.
-- Collaborated with QA, dev, and product teams on automation strategy and test-coverage
+- Collaborated with engineering and product teams on automation strategy and test-coverage
   planning; helped onboard the Zuub project - established automation infrastructure from the
   ground up.
 
@@ -107,7 +107,7 @@ spoofing, stealth headers, human-like delays, proxy rotation, canvas noise, WebG
 TypeScript, ESLint v9, GitHub Actions CI.
 github.com/M-Hammad-Faisal/stealth-scraper-playwright
 
-Code Mage - QA Automation Content Platform
+Code Mage - Automation Content Platform
 Technical content platform for automation engineers; 28+ published tutorial chapters across
 Playwright, WebdriverIO, and Cypress. Built on Next.js 15, Supabase, Vercel, TypeScript,
 Tailwind v4.
